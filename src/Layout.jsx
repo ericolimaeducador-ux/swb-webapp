@@ -11,6 +11,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
   { label: 'Início', page: 'Home' },
+  { label: 'Base Científica', page: 'BaseCientifica' },
   { label: 'Benefícios', page: 'Benefits' },
   { label: 'Produto', page: 'Marketplace' },
   { label: 'Contato', page: 'Contact' }

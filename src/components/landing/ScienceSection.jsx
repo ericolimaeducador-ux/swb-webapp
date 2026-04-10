@@ -74,7 +74,7 @@ export default function ScienceSection() {
               ))}
             </div>
 
-            <Link to={createPageUrl("Benefits")}>
+            <Link to={createPageUrl("BaseCientifica")}>
               <Button 
                 size="lg"
                 className="bg-[#0066B3] hover:bg-[#004080] text-white font-semibold px-8 py-6 text-lg rounded-xl"
