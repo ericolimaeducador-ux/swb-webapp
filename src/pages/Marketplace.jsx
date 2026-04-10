@@ -1,0 +1,212 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import {
+  Shield, Package, Ruler, FileText, CheckCircle,
+  MessageCircle, ArrowRight, Info } from
+'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import ContactForm from '../components/shared/ContactForm';
+
+const specifications = [
+{ label: 'Material', value: 'Espuma de poliuretano de alta qualidade' },
+{ label: 'Formato', value: 'Anatômico para região sacral' },
+{ label: 'Adesivo', value: 'Hipoalergênico e suave à pele' },
+{ label: 'Dimensões', value: '18cm x 20cm (padrão adulto)' },
+{ label: 'Espessura', value: '5mm de proteção' },
+{ label: 'Cor', value: 'Branco hospitalar' },
+{ label: 'Embalagem', value: 'Individual, estéril' },
+{ label: 'Validade', value: '3 anos (fechado)' }];
+
+
+const features = [
+'Barreira física contra contaminação fecal',
+'Fácil aplicação e remoção',
+'Não interfere em curativos existentes',
+'Confortável para uso prolongado',
+'Permeável ao vapor',
+'Descartável após uso'];
+
+
+export default function Marketplace() {
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero */}
+      <section className="relative py-16 bg-gradient-to-br from-[#0066B3] via-[#004080] to-[#002855] overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-10 right-10 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-10 left-10 w-80 h-80 bg-[#00A878]/10 rounded-full blur-3xl" />
+        </div>
+
+        <div className="container mx-auto px-6 lg:px-12 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center">
+            
+            <Badge className="bg-white/10 text-white border-white/20 mb-4">
+              Produto Médico
+            </Badge>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              SWB - Sistema de Proteção Sacral
+            </h1>
+            <p className="text-xl text-white/80 max-w-2xl mx-auto">
+              Tecnologia inovadora para proteção da região sacral em pacientes incontinentes
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      <div className="container mx-auto px-6 lg:px-12 py-12">
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Product Display */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}>
+            
+            {/* Product Video */}
+            <div className="bg-white rounded-3xl shadow-lg p-6 mb-6">
+              <div className="aspect-video rounded-2xl overflow-hidden">
+                <iframe
+                  src="https://www.youtube.com/embed/OkPlJGnX_tw"
+                  title="SWB - Vídeo de Aplicação"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full" />
+                
+              </div>
+            </div>
+
+            {/* Product Image - Packaging */}
+            <div className="bg-white rounded-3xl shadow-lg p-6 mb-6 flex justify-center">
+              <img
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6990ca27ebb6e2fb5d662b83/3175b57f8_1755480629769.jpg"
+                alt="SWB - Embalagem do Produto"
+                className="w-[65%] h-auto rounded-2xl" />
+              
+            </div>
+
+            {/* Quick Features */}
+            <div className="bg-white rounded-2xl shadow-lg p-6">
+              <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-[#00A878]" />
+                Características Principais
+              </h3>
+              <div className="grid grid-cols-2 gap-3">
+                {features.map((feature, index) =>
+                <div key={index} className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#00A878] mt-2 flex-shrink-0" />
+                    <span className="text-gray-600 text-sm">{feature}</span>
+                  </div>
+                )}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Product Info & Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}>
+            
+            <Tabs defaultValue="details" className="space-y-6">
+              <TabsList className="grid grid-cols-2 bg-gray-100 p-1 rounded-xl">
+                <TabsTrigger value="details" className="rounded-lg">Detalhes</TabsTrigger>
+                <TabsTrigger value="quote" className="rounded-lg">Orçamento</TabsTrigger>
+              </TabsList>
+
+              <TabsContent value="details" className="space-y-6">
+                {/* Description */}
+                <div className="bg-white rounded-2xl shadow-lg p-6">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-4">Descrição do Produto</h2>
+                  <p className="text-gray-600 leading-relaxed mb-6">
+                    O SWB (Sistema de Proteção para Região Sacral) é um dispositivo médico 
+                    desenvolvido para criar uma barreira física protetora na região sacral de 
+                    pacientes incontinentes. Fabricado em espuma de poliuretano de alta qualidade, 
+                    o SWB minimiza o contato direto de fezes com curativos e pele, contribuindo 
+                    para protocolos de prevenção de lesões por pressão e otimização do cuidado.
+                  </p>
+
+                  <div className="flex items-center gap-3 p-4 bg-amber-50 rounded-xl border border-amber-100">
+                    <Info className="w-5 h-5 text-amber-600 flex-shrink-0" />
+                    <p className="text-amber-800 text-sm">
+                      Produto para uso profissional. Consulte as instruções de uso antes da aplicação.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Specifications */}
+                <div className="bg-white rounded-2xl shadow-lg p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                    <Package className="w-5 h-5 text-[#0066B3]" />
+                    Especificações Técnicas
+                  </h3>
+                  <div className="space-y-3">
+                    {specifications.map((spec, index) =>
+                    <div
+                      key={index}
+                      className="flex justify-between items-center py-3 border-b border-gray-100 last:border-0">
+                      
+                        <span className="text-gray-500">{spec.label}</span>
+                        <span className="font-medium text-gray-900">{spec.value}</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Regulatory */}
+                <div className="bg-white rounded-2xl shadow-lg p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                    <FileText className="w-5 h-5 text-[#0066B3]" />
+                    Informações Regulatórias
+                  </h3>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center py-3 border-b border-gray-100">
+                      <span className="text-gray-500">Número de Notificação ANVISA</span>
+                      <span className="font-medium text-gray-900">80220130014</span>
+                    </div>
+                    <div className="flex justify-between items-center py-3 border-b border-gray-100">
+                      <span className="text-gray-500">Classificação</span>
+                      <span className="font-medium text-gray-900">Dispositivo Médico Classe I</span>
+                    </div>
+                    <div className="flex justify-between items-center py-3">
+                      <span className="text-gray-500">Fabricação</span>
+                      <span className="font-medium text-gray-900">Brasil</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a
+                    href="https://wa.me/5511999999999?text=Olá! Gostaria de solicitar um orçamento do SWB."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1">
+                    
+                    <Button className="w-full h-14 bg-[#00A878] hover:bg-[#008f66] text-white font-semibold text-lg rounded-xl">
+                      <MessageCircle className="mr-2 w-5 h-5" />
+                      WhatsApp
+                    </Button>
+                  </a>
+                </div>
+              </TabsContent>
+
+              <TabsContent value="quote">
+                <div className="bg-white rounded-2xl shadow-lg p-6">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-2">Solicitar Orçamento</h2>
+                  <p className="text-gray-600 mb-6">
+                    Preencha o formulário abaixo e nossa equipe entrará em contato em até 24 horas úteis.
+                  </p>
+                  <ContactForm showQuantity={true} />
+                </div>
+              </TabsContent>
+            </Tabs>
+          </motion.div>
+        </div>
+      </div>
+    </div>);
+
+}
