@@ -74,7 +74,7 @@ export default function ScienceSection() {
               ))}
             </div>
 
-            <a href="/artigo-swb.html" target="_blank" rel="noopener noreferrer">
+            <Link to={createPageUrl("Benefits")}>
               <Button 
                 size="lg"
                 className="bg-[#0066B3] hover:bg-[#004080] text-white font-semibold px-8 py-6 text-lg rounded-xl"
@@ -82,7 +82,7 @@ export default function ScienceSection() {
                 Conheça a Base Científica
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-            </a>
+            </Link>
           </motion.div>
 
           <motion.div
