@@ -18,7 +18,7 @@ const contactInfo = [
   { 
     icon: MessageCircle, 
     title: 'WhatsApp', 
-    value: '+55 (11) 94739-1805',
+    value: '+55 11 947391805',
     action: 'https://wa.me/5511947391805',
     actionLabel: 'Iniciar conversa'
   },
@@ -32,7 +32,7 @@ const contactInfo = [
   { 
     icon: Phone, 
     title: 'Telefone', 
-    value: '+55 (11) 94739-1805',
+    value: '+55 11 947391805',
     action: 'tel:+5511947391805',
     actionLabel: 'Ligar agora'
   }

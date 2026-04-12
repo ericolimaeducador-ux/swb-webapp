@@ -211,7 +211,7 @@ export default function Layout({ children, currentPageName }) {
                 <li className="flex items-start gap-3">
                   <Phone className="w-5 h-5 text-[#00A878] mt-0.5" />
                   <div>
-                    <p className="text-white">+55 (11) 94739-1805</p>
+                    <p className="text-white">+55 11 947391805</p>
                     <p className="text-gray-400 text-sm">WhatsApp</p>
                   </div>
                 </li>

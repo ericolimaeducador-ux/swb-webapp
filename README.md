@@ -101,7 +101,7 @@ No Instagram, compartilhamos atualizações, conteúdos visuais, comunicação i
 Para informações institucionais, apresentações, parcerias e dúvidas sobre o SWB:
 
 - **E-mail:** comercial@swbbrasil.com.br  
-- **WhatsApp:** +55 (11) 94739-1805  
+- **WhatsApp:** +55 11 947391805  
 
 ---
 
