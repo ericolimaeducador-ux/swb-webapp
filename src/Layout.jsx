@@ -122,7 +122,7 @@ export default function Layout({ children, currentPageName }) {
                 </nav>
                 <div className="mt-6">
                   <a 
-                    href="https://wa.me/5511999999999"
+                    href="https://wa.me/5511947391805"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

@@ -24,7 +24,7 @@ const topics = [
   {
     icon: GraduationCap,
     title: "Dermatite Associada",
-    description: "IAD e seus mecanismos de lesão tissular."
+    description: "DAI e seus mecanismos de lesão tissular."
   }
 ];
 
@@ -97,7 +97,7 @@ export default function ScienceSection() {
                 {[
                   "NPUAP/EPUAP Guidelines 2019",
                   "WOUND CARE - Journal of Clinical Nursing",
-                  "IAD Best Practice Principles - WCET",
+                   "DAI Best Practice Principles - WCET",
                   "Cochrane Review - Pressure Ulcer Prevention"
                 ].map((ref, index) => (
                   <div 

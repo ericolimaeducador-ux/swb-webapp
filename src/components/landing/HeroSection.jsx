@@ -50,7 +50,7 @@ export default function HeroSection() {
                 </Button>
               </Link>
               <a
-                href="https://wa.me/5511999999999?text=Olá! Gostaria de falar com um especialista sobre o SWB."
+                href="https://wa.me/5511947391805?text=Olá! Gostaria de falar com um especialista sobre o SWB."
                 target="_blank"
                 rel="noopener noreferrer">
                 

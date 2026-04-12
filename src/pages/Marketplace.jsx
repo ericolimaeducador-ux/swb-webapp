@@ -181,7 +181,7 @@ export default function Marketplace() {
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
-                    href="https://wa.me/5511999999999?text=Olá! Gostaria de solicitar um orçamento do SWB."
+                    href="https://wa.me/5511947391805?text=Olá! Gostaria de solicitar um orçamento do SWB."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1">
