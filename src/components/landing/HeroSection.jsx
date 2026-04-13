@@ -24,11 +24,12 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}>
             <div className="max-w-2xl space-y-6 md:space-y-8">
-              <LogoBadge mode="dark" size="hero" showWordmark />
-
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
-                <Shield className="w-4 h-4 text-[#00A878]" />
-                <span className="text-white/90 text-[13px] md:text-sm font-semibold tracking-[0.01em]">Inovação Assistencial para a Região Sacral</span>
+              <div className="inline-flex flex-col gap-4 rounded-2xl border border-white/30 bg-white/10 px-5 py-6 shadow-[0_18px_45px_rgba(0,0,0,0.3)] backdrop-blur-xl sm:px-6 sm:py-8">
+                <LogoBadge mode="dark" size="hero" showWordmark className="shadow-none" />
+                <div className="inline-flex items-center gap-2 self-start rounded-full border border-white/20 bg-white/5 px-3 py-1.5">
+                  <Shield className="w-4 h-4 text-[#00A878]" />
+                  <span className="text-white/90 text-[12px] md:text-[13px] font-semibold tracking-[0.02em]">Tecnologia em Proteção Sacral</span>
+                </div>
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.03] tracking-tight max-w-[13ch]">
@@ -90,10 +91,14 @@ export default function HeroSection() {
               <div className="absolute -inset-2 bg-gradient-to-tr from-[#004080]/20 to-[#00A878]/10 rounded-3xl blur-xl" />
               <div className="relative rounded-3xl overflow-hidden" style={{background: 'linear-gradient(135deg, rgba(0,102,179,0.15) 0%, rgba(0,168,120,0.1) 50%, rgba(0,40,85,0.2) 100%)'}}>
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#002855]/40" />
-                <img
-                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6990ca27ebb6e2fb5d662b83/9e156124c_1.jpg"
-                  alt="SWB - Sistema de Proteção Sacral"
-                  className="w-full h-auto mix-blend-multiply" />
+                <video
+                  src="/logoanimado.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-auto object-cover mix-blend-multiply"
+                />
               </div>
             </div>
           </motion.div>

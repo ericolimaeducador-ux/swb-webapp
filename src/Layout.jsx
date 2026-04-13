@@ -53,12 +53,14 @@ export default function Layout({ children, currentPageName }) {
       {/* Header */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerBg}`}>
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="flex items-center justify-between h-20 md:h-24">
+          <div className="flex items-center justify-between h-[88px] md:h-[100px]">
             {/* Logo */}
             <Link
               to={createPageUrl('Home')}
-              className="flex items-center shrink-0">
-              <LogoBadge mode={logoMode} size="header" showWordmark />
+              className="group flex items-center shrink-0">
+              <div className="rounded-2xl ring-1 ring-white/30 shadow-[0_14px_36px_rgba(0,0,0,0.24)] transition-all duration-300 group-hover:shadow-[0_18px_40px_rgba(0,0,0,0.3)]">
+                <LogoBadge mode={logoMode} size="header" showWordmark className="md:pr-2" />
+              </div>
             </Link>
 
             {/* Desktop Navigation */}
@@ -137,7 +139,7 @@ export default function Layout({ children, currentPageName }) {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 pt-20 md:pt-24">
+      <main className="flex-1 pt-[88px] md:pt-[100px]">
         {children}
       </main>
 

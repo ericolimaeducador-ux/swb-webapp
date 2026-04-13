@@ -35,7 +35,7 @@ export default function LogoBadge({
             'w-auto object-contain',
             isHeader
               ? 'h-10 sm:h-11 md:h-12 lg:h-14 max-w-[190px]'
-              : 'h-11 sm:h-12 md:h-14 lg:h-16 xl:h-[4.75rem] max-w-[220px] md:max-w-[290px]',
+              : 'h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32 max-w-[280px] md:max-w-[380px]',
             isDark
               ? 'brightness-125 contrast-125 saturate-110 drop-shadow-[0_8px_20px_rgba(0,0,0,0.35)]'
               : 'brightness-100 contrast-100',
