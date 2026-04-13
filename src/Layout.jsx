@@ -44,13 +44,13 @@ export default function Layout({ children, currentPageName }) {
   const headerSurface = isScrolled || !isHome
     ? 'border-white/80 bg-white/80 shadow-[0_18px_50px_rgba(15,23,42,0.09)] backdrop-blur-xl'
     : 'border-white/15 bg-white/8 backdrop-blur-md';
-  const textColor = isScrolled || !isHome ? 'text-slate-900' : 'text-white';
+  const textColor = 'text-slate-800';
   const navPillSurface = isScrolled || !isHome
     ? 'bg-slate-50/90 ring-1 ring-slate-200/80'
     : 'bg-white/10 ring-1 ring-white/15';
   const topBadgeSurface = isScrolled || !isHome
     ? 'bg-[#E9F6F1] text-[#006B4F]'
-    : 'bg-white/10 text-white';
+    : 'bg-[#E9F6F1]/85 text-[#0B5B45]';
 
   return (
     <div className="swb-shell min-h-screen flex flex-col">
@@ -67,7 +67,7 @@ export default function Layout({ children, currentPageName }) {
               />
               <div className="hidden min-[420px]:block">
                 <p className={`text-sm font-semibold uppercase tracking-[0.24em] ${textColor}`}>SWB Brasil</p>
-                <p className={`text-xs ${isScrolled || !isHome ? 'text-slate-500' : 'text-white/70'}`}>
+                <p className={`text-xs ${isScrolled || !isHome ? 'text-slate-500' : 'text-slate-600'}`}>
                   Proteção sacral com foco assistencial
                 </p>
               </div>
