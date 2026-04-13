@@ -1,49 +1,66 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
-import { Shield, MessageCircle, ArrowRight } from 'lucide-react';
+import { Shield, MessageCircle, ArrowRight, BadgeCheck, Activity, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-[#0066B3] via-[#004080] to-[#002855]">
+    <section className="relative flex min-h-[92vh] items-center overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(38,208,164,0.18),_transparent_18%),linear-gradient(135deg,_#0a3f72_0%,_#062a4f_46%,_#041729_100%)]">
       {/* Abstract medical pattern overlay */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#00A878] rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/20 rounded-full" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-white/10 rounded-full" />
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute left-[-6%] top-16 h-72 w-72 rounded-full bg-white blur-3xl" />
+        <div className="absolute bottom-10 right-[-2%] h-96 w-96 rounded-full bg-[#00A878] blur-3xl" />
+        <div className="absolute left-1/2 top-1/2 h-[620px] w-[620px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/15" />
+        <div className="absolute left-1/2 top-1/2 h-[820px] w-[820px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:72px_72px] [mask-image:linear-gradient(180deg,rgba(0,0,0,0.75),transparent)]" />
       </div>
 
-      <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="section-frame relative z-10">
+        <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}>
             
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 backdrop-blur-sm">
+              <Sparkles className="h-4 w-4 text-[#7EF0C8]" />
               <Shield className="w-4 h-4 text-[#00A878]" />
-              <span className="text-white/90 text-sm font-medium">Tecnologia em Proteção Sacral</span>
+              <span className="text-sm font-medium text-white/90">Tecnologia em Proteção Sacral</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              SWB: Cada cuidado
-              <span className="block text-[#00A878]">importa.</span>
+            <h1 className="mb-6 max-w-3xl text-5xl leading-[0.95] text-white md:text-6xl lg:text-7xl">
+              Menos contaminação.
+              <span className="block text-[#9AF2D6]">Mais controle assistencial.</span>
             </h1>
 
-            <p className="text-xl text-white/80 leading-relaxed mb-8 max-w-xl">
+            <p className="mb-8 max-w-2xl text-xl leading-relaxed text-white/78 md:text-2xl">
               Barreira física inteligente contra contaminação fecal. 
-              <span className="text-white font-medium"> Menos retrabalho. Mais eficiência assistencial. 
+              <span className="font-semibold text-white"> Menos retrabalho. Mais eficiência assistencial. 
               Gestão inteligente de custos hospitalares.</span>
             </p>
+
+            <div className="mb-10 grid max-w-2xl gap-3 sm:grid-cols-3">
+              <div className="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-sm">
+                <p className="mb-1 text-sm font-semibold uppercase tracking-[0.18em] text-white/55">Foco</p>
+                <p className="text-base font-semibold text-white">Proteção da região sacral</p>
+              </div>
+              <div className="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-sm">
+                <p className="mb-1 text-sm font-semibold uppercase tracking-[0.18em] text-white/55">Impacto</p>
+                <p className="text-base font-semibold text-white">Redução de retrabalho clínico</p>
+              </div>
+              <div className="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-sm">
+                <p className="mb-1 text-sm font-semibold uppercase tracking-[0.18em] text-white/55">Aplicação</p>
+                <p className="text-base font-semibold text-white">Hospitais, ILPIs e home care</p>
+              </div>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to={createPageUrl('Marketplace')}>
                 <Button
                   size="lg"
-                  className="bg-[#00A878] hover:bg-[#008f66] text-white font-semibold px-8 py-6 text-lg rounded-xl shadow-lg shadow-[#00A878]/30 transition-all hover:scale-105">
+                  className="rounded-full bg-[#00A878] px-8 py-6 text-lg font-semibold text-white shadow-lg shadow-[#00A878]/30 transition-all hover:scale-105 hover:bg-[#008f66]">
                   
                   Solicitar Orçamento
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -57,7 +74,7 @@ export default function HeroSection() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-2 border-white bg-white/10 text-white hover:bg-white hover:text-[#0066B3] font-semibold px-8 py-6 text-lg rounded-xl backdrop-blur-sm transition-all hover:scale-105">
+                  className="rounded-full border-2 border-white bg-white/10 px-8 py-6 text-lg font-semibold text-white backdrop-blur-sm transition-all hover:scale-105 hover:bg-white hover:text-[#0066B3]">
                   
                   <MessageCircle className="mr-2 w-5 h-5" />
                   Falar com Especialista
@@ -65,20 +82,14 @@ export default function HeroSection() {
               </a>
             </div>
 
-            <div className="mt-12 flex items-center gap-8">
-              <div className="text-center">
-                
-                
+            <div className="mt-12 flex flex-wrap items-center gap-6 text-white/85">
+              <div className="flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-sm">
+                <BadgeCheck className="h-5 w-5 text-[#7EF0C8]" />
+                <span className="text-sm font-medium">Design orientado à rotina assistencial</span>
               </div>
-              
-              <div className="text-center">
-                <p className="text-3xl font-bold text-white">98%</p>
-                <p className="text-white/60 text-sm">Satisfação</p>
-              </div>
-              <div className="w-px h-12 bg-white/20" />
-              <div className="text-center">
-                <p className="text-3xl font-bold text-white">24h</p>
-                <p className="text-white/60 text-sm">Suporte</p>
+              <div className="flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-sm">
+                <Activity className="h-5 w-5 text-[#7EF0C8]" />
+                <span className="text-sm font-medium">Pensado para eficiência clínica e econômica</span>
               </div>
             </div>
           </motion.div>
@@ -90,14 +101,22 @@ export default function HeroSection() {
             className="hidden lg:block">
             
             <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-br from-[#00A878]/30 via-[#0066B3]/20 to-transparent rounded-3xl blur-3xl" />
-              <div className="absolute -inset-2 bg-gradient-to-tr from-[#004080]/20 to-[#00A878]/10 rounded-3xl blur-xl" />
-              <div className="relative rounded-3xl overflow-hidden" style={{background: 'linear-gradient(135deg, rgba(0,102,179,0.15) 0%, rgba(0,168,120,0.1) 50%, rgba(0,40,85,0.2) 100%)'}}>
+              <div className="absolute -inset-6 rounded-[36px] bg-gradient-to-br from-[#00A878]/30 via-[#0066B3]/20 to-transparent blur-3xl" />
+              <div className="absolute -inset-1 rounded-[36px] border border-white/10 bg-white/5 backdrop-blur-sm" />
+              <div className="relative overflow-hidden rounded-[32px] border border-white/15 bg-[linear-gradient(135deg,rgba(0,102,179,0.15)_0%,rgba(0,168,120,0.1)_50%,rgba(0,40,85,0.2)_100%)] p-4 shadow-[0_24px_70px_rgba(2,12,27,0.34)]">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#002855]/40" />
                 <img
                   src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6990ca27ebb6e2fb5d662b83/9e156124c_1.jpg"
                   alt="SWB - Sistema de Proteção Sacral"
-                  className="w-full h-auto mix-blend-multiply" />
+                  className="h-auto w-full rounded-[24px] mix-blend-multiply"
+                />
+                <div className="absolute bottom-8 left-8 right-8 rounded-[28px] border border-white/15 bg-[#041b31]/75 p-5 backdrop-blur-md">
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#9AF2D6]">Proposta de valor</p>
+                  <p className="text-2xl font-bold text-white">Uma camada simples que reduz um problema caro.</p>
+                  <p className="mt-2 text-sm leading-relaxed text-white/72">
+                    Produto pensado para integrar prevenção, operação e gestão com leitura rápida de benefício clínico.
+                  </p>
+                </div>
               </div>
             </div>
           </motion.div>

@@ -29,7 +29,7 @@ export default function LogoBadge({
           isDark ? 'border border-white/25 bg-[#003b78]/35' : 'border border-slate-200 bg-slate-50',
         )}>
         <img
-          src="/logo_swb_firstpage.png"
+          src="/logoswb.jpg"
           alt="SWB"
           className={cn(
             'w-auto object-contain',
