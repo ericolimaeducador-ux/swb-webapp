@@ -9,15 +9,15 @@ import Autoplay from 'embla-carousel-autoplay';
 
 const productImages = [
   {
-    src: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6990ca27ebb6e2fb5d662b83/9e156124c_1.jpg',
+    src: '/1.png',
     alt: 'SWB - Vista frontal do produto',
   },
   {
-    src: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6990ca27ebb6e2fb5d662b83/9e156124c_1.jpg',
+    src: '/2.png',
     alt: 'SWB - Vista lateral do produto',
   },
   {
-    src: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6990ca27ebb6e2fb5d662b83/9e156124c_1.jpg',
+    src: '/3.png',
     alt: 'SWB - Detalhe de aplicação',
   },
 ];
