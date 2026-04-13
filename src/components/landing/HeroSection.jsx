@@ -22,6 +22,12 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}>
+
+            <img
+              src="/logo_swb_firstpage.png"
+              alt="SWB"
+              className="h-10 sm:h-12 md:h-14 lg:h-20 xl:h-24 w-auto max-w-[220px] md:max-w-[300px] mb-5 md:mb-7 object-contain drop-shadow-[0_8px_30px_rgba(0,0,0,0.35)]"
+            />
             
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
               <Shield className="w-4 h-4 text-[#00A878]" />
