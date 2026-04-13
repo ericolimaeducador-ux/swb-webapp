@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { Shield, MessageCircle, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import LogoBadge from '@/components/shared/LogoBadge';
 import { motion } from 'framer-motion';
 
 export default function HeroSection() {
@@ -17,66 +18,55 @@ export default function HeroSection() {
       </div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}>
+            <div className="max-w-2xl space-y-6 md:space-y-8">
+              <LogoBadge mode="dark" size="hero" showWordmark />
 
-            <img
-              src="/logo_swb_firstpage.png"
-              alt="SWB"
-              className="h-10 sm:h-12 md:h-14 lg:h-20 xl:h-24 w-auto max-w-[220px] md:max-w-[300px] mb-5 md:mb-7 object-contain drop-shadow-[0_8px_30px_rgba(0,0,0,0.35)]"
-            />
-            
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
-              <Shield className="w-4 h-4 text-[#00A878]" />
-              <span className="text-white/90 text-sm font-medium">Tecnologia em Proteção Sacral</span>
-            </div>
-
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              SWB: Cada cuidado
-              <span className="block text-[#00A878]">importa.</span>
-            </h1>
-
-            <p className="text-xl text-white/80 leading-relaxed mb-8 max-w-xl">
-              Barreira física inteligente contra contaminação fecal. 
-              <span className="text-white font-medium"> Menos retrabalho. Mais eficiência assistencial. 
-              Gestão inteligente de custos hospitalares.</span>
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to={createPageUrl('Marketplace')}>
-                <Button
-                  size="lg"
-                  className="bg-[#00A878] hover:bg-[#008f66] text-white font-semibold px-8 py-6 text-lg rounded-xl shadow-lg shadow-[#00A878]/30 transition-all hover:scale-105">
-                  
-                  Solicitar Orçamento
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
-              <a
-                href="https://wa.me/5511947391805?text=Olá! Gostaria de falar com um especialista sobre o SWB."
-                target="_blank"
-                rel="noopener noreferrer">
-                
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-2 border-white bg-white/10 text-white hover:bg-white hover:text-[#0066B3] font-semibold px-8 py-6 text-lg rounded-xl backdrop-blur-sm transition-all hover:scale-105">
-                  
-                  <MessageCircle className="mr-2 w-5 h-5" />
-                  Falar com Especialista
-                </Button>
-              </a>
-            </div>
-
-            <div className="mt-12 flex items-center gap-8">
-              <div className="text-center">
-                
-                
+              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
+                <Shield className="w-4 h-4 text-[#00A878]" />
+                <span className="text-white/90 text-[13px] md:text-sm font-semibold tracking-[0.01em]">Inovação Assistencial para a Região Sacral</span>
               </div>
-              
+
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.03] tracking-tight max-w-[13ch]">
+                SWB: Cada cuidado
+                <span className="block text-[#00A878]">importa.</span>
+              </h1>
+
+              <p className="text-lg md:text-xl text-white/85 leading-relaxed max-w-[62ch]">
+                Barreira física inteligente contra contaminação fecal.
+                <span className="text-white font-medium"> Menos retrabalho. Mais eficiência assistencial. Gestão inteligente de custos hospitalares.</span>
+              </p>
+
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-1">
+                <Link to={createPageUrl('Marketplace')} className="w-full sm:w-auto">
+                  <Button
+                    size="lg"
+                    className="w-full sm:w-auto bg-[#00A878] hover:bg-[#008f66] text-white font-semibold px-8 py-6 text-lg rounded-xl shadow-lg shadow-[#00A878]/30 transition-all hover:scale-105">
+                    Solicitar Orçamento
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
+                <a
+                  href="https://wa.me/5511947391805?text=Olá! Gostaria de falar com um especialista sobre o SWB."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full sm:w-auto border-2 border-white bg-white/10 text-white hover:bg-white hover:text-[#0066B3] font-semibold px-8 py-6 text-lg rounded-xl backdrop-blur-sm transition-all hover:scale-105">
+                    <MessageCircle className="mr-2 w-5 h-5" />
+                    Falar com Especialista
+                  </Button>
+                </a>
+              </div>
+            </div>
+
+            <div className="mt-12 pt-6 border-t border-white/15 flex items-center gap-8">
               <div className="text-center">
                 <p className="text-3xl font-bold text-white">98%</p>
                 <p className="text-white/60 text-sm">Satisfação</p>

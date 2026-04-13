@@ -7,6 +7,7 @@ import {
   Mail, Phone, MapPin
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import LogoBadge from '@/components/shared/LogoBadge';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
@@ -45,25 +46,23 @@ export default function Layout({ children, currentPageName }) {
     ? 'bg-white/95 backdrop-blur-md shadow-sm' 
     : 'bg-transparent';
   const textColor = isScrolled || !isHome ? 'text-gray-900' : 'text-white';
-  const logoColor = isScrolled || !isHome ? 'text-[#0066B3]' : 'text-white';
+  const logoMode = isScrolled || !isHome ? 'light' : 'dark';
 
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerBg}`}>
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-20 md:h-24">
             {/* Logo */}
-            <Link to={createPageUrl('Home')} className="flex items-center">
-              <img 
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6990ca27ebb6e2fb5d662b83/6ac36028e_Logoswb.jpg" 
-                alt="SWB - Sacral Protection" 
-                className="h-12 w-auto"
-              />
+            <Link
+              to={createPageUrl('Home')}
+              className="flex items-center shrink-0">
+              <LogoBadge mode={logoMode} size="header" showWordmark />
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-8">
+            <nav className="hidden md:flex items-center gap-6 lg:gap-8">
               {navLinks.map((link) => (
                 <Link
                   key={link.page}
@@ -138,7 +137,7 @@ export default function Layout({ children, currentPageName }) {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 pt-20">
+      <main className="flex-1 pt-20 md:pt-24">
         {children}
       </main>
 
