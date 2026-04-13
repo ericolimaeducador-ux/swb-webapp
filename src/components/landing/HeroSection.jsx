@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { Shield, MessageCircle, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import LogoBadge from '@/components/shared/LogoBadge';
 import { motion } from 'framer-motion';
 
 export default function HeroSection() {
@@ -18,56 +17,60 @@ export default function HeroSection() {
       </div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}>
-            <div className="max-w-2xl space-y-6 md:space-y-8">
-              <div className="inline-flex flex-col gap-4 rounded-2xl border border-white/30 bg-white/10 px-5 py-6 shadow-[0_18px_45px_rgba(0,0,0,0.3)] backdrop-blur-xl sm:px-6 sm:py-8">
-                <LogoBadge mode="dark" size="hero" showWordmark className="shadow-none" />
-                <div className="inline-flex items-center gap-2 self-start rounded-full border border-white/20 bg-white/5 px-3 py-1.5">
-                  <Shield className="w-4 h-4 text-[#00A878]" />
-                  <span className="text-white/90 text-[12px] md:text-[13px] font-semibold tracking-[0.02em]">Tecnologia em Proteção Sacral</span>
-                </div>
-              </div>
-
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.03] tracking-tight max-w-[13ch]">
-                SWB: Cada cuidado
-                <span className="block text-[#00A878]">importa.</span>
-              </h1>
-
-              <p className="text-lg md:text-xl text-white/85 leading-relaxed max-w-[62ch]">
-                Barreira física inteligente contra contaminação fecal.
-                <span className="text-white font-medium"> Menos retrabalho. Mais eficiência assistencial. Gestão inteligente de custos hospitalares.</span>
-              </p>
-
-              <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-1">
-                <Link to={createPageUrl('Marketplace')} className="w-full sm:w-auto">
-                  <Button
-                    size="lg"
-                    className="w-full sm:w-auto bg-[#00A878] hover:bg-[#008f66] text-white font-semibold px-8 py-6 text-lg rounded-xl shadow-lg shadow-[#00A878]/30 transition-all hover:scale-105">
-                    Solicitar Orçamento
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                </Link>
-                <a
-                  href="https://wa.me/5511947391805?text=Olá! Gostaria de falar com um especialista sobre o SWB."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full sm:w-auto">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="w-full sm:w-auto border-2 border-white bg-white/10 text-white hover:bg-white hover:text-[#0066B3] font-semibold px-8 py-6 text-lg rounded-xl backdrop-blur-sm transition-all hover:scale-105">
-                    <MessageCircle className="mr-2 w-5 h-5" />
-                    Falar com Especialista
-                  </Button>
-                </a>
-              </div>
+            
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
+              <Shield className="w-4 h-4 text-[#00A878]" />
+              <span className="text-white/90 text-sm font-medium">Tecnologia em Proteção Sacral</span>
             </div>
 
-            <div className="mt-12 pt-6 border-t border-white/15 flex items-center gap-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+              SWB: Cada cuidado
+              <span className="block text-[#00A878]">importa.</span>
+            </h1>
+
+            <p className="text-xl text-white/80 leading-relaxed mb-8 max-w-xl">
+              Barreira física inteligente contra contaminação fecal. 
+              <span className="text-white font-medium"> Menos retrabalho. Mais eficiência assistencial. 
+              Gestão inteligente de custos hospitalares.</span>
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link to={createPageUrl('Marketplace')}>
+                <Button
+                  size="lg"
+                  className="bg-[#00A878] hover:bg-[#008f66] text-white font-semibold px-8 py-6 text-lg rounded-xl shadow-lg shadow-[#00A878]/30 transition-all hover:scale-105">
+                  
+                  Solicitar Orçamento
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
+              <a
+                href="https://wa.me/5511947391805?text=Olá! Gostaria de falar com um especialista sobre o SWB."
+                target="_blank"
+                rel="noopener noreferrer">
+                
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-white bg-white/10 text-white hover:bg-white hover:text-[#0066B3] font-semibold px-8 py-6 text-lg rounded-xl backdrop-blur-sm transition-all hover:scale-105">
+                  
+                  <MessageCircle className="mr-2 w-5 h-5" />
+                  Falar com Especialista
+                </Button>
+              </a>
+            </div>
+
+            <div className="mt-12 flex items-center gap-8">
+              <div className="text-center">
+                
+                
+              </div>
+              
               <div className="text-center">
                 <p className="text-3xl font-bold text-white">98%</p>
                 <p className="text-white/60 text-sm">Satisfação</p>
@@ -91,14 +94,10 @@ export default function HeroSection() {
               <div className="absolute -inset-2 bg-gradient-to-tr from-[#004080]/20 to-[#00A878]/10 rounded-3xl blur-xl" />
               <div className="relative rounded-3xl overflow-hidden" style={{background: 'linear-gradient(135deg, rgba(0,102,179,0.15) 0%, rgba(0,168,120,0.1) 50%, rgba(0,40,85,0.2) 100%)'}}>
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#002855]/40" />
-                <video
-                  src="/logoanimado.mp4"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="w-full h-auto object-cover mix-blend-multiply"
-                />
+                <img
+                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6990ca27ebb6e2fb5d662b83/9e156124c_1.jpg"
+                  alt="SWB - Sistema de Proteção Sacral"
+                  className="w-full h-auto mix-blend-multiply" />
               </div>
             </div>
           </motion.div>

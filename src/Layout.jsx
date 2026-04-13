@@ -7,7 +7,6 @@ import {
   Mail, Phone, MapPin
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import LogoBadge from '@/components/shared/LogoBadge';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
@@ -46,25 +45,25 @@ export default function Layout({ children, currentPageName }) {
     ? 'bg-white/95 backdrop-blur-md shadow-sm' 
     : 'bg-transparent';
   const textColor = isScrolled || !isHome ? 'text-gray-900' : 'text-white';
-  const logoMode = isScrolled || !isHome ? 'light' : 'dark';
+  const logoColor = isScrolled || !isHome ? 'text-[#0066B3]' : 'text-white';
 
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerBg}`}>
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="flex items-center justify-between h-[88px] md:h-[100px]">
+          <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link
-              to={createPageUrl('Home')}
-              className="group flex items-center shrink-0">
-              <div className="rounded-2xl ring-1 ring-white/30 shadow-[0_14px_36px_rgba(0,0,0,0.24)] transition-all duration-300 group-hover:shadow-[0_18px_40px_rgba(0,0,0,0.3)]">
-                <LogoBadge mode={logoMode} size="header" showWordmark className="md:pr-2" />
-              </div>
+            <Link to={createPageUrl('Home')} className="flex items-center">
+              <img 
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6990ca27ebb6e2fb5d662b83/6ac36028e_Logoswb.jpg" 
+                alt="SWB - Sacral Protection" 
+                className="h-12 w-auto"
+              />
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+            <nav className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (
                 <Link
                   key={link.page}
@@ -139,7 +138,7 @@ export default function Layout({ children, currentPageName }) {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 pt-[88px] md:pt-[100px]">
+      <main className="flex-1 pt-20">
         {children}
       </main>
 
