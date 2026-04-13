@@ -1,9 +1,84 @@
-import React from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
-import { Shield, MessageCircle, ArrowRight, BadgeCheck, Activity, Sparkles } from 'lucide-react';
+import { Shield, MessageCircle, ArrowRight, BadgeCheck, Activity, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
+
+const productImages = [
+  {
+    src: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6990ca27ebb6e2fb5d662b83/9e156124c_1.jpg',
+    alt: 'SWB - Vista frontal do produto',
+  },
+  {
+    src: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6990ca27ebb6e2fb5d662b83/9e156124c_1.jpg',
+    alt: 'SWB - Vista lateral do produto',
+  },
+  {
+    src: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6990ca27ebb6e2fb5d662b83/9e156124c_1.jpg',
+    alt: 'SWB - Detalhe de aplicação',
+  },
+];
+
+function ProductCarousel() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 3500, stopOnInteraction: true })]);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
+    emblaApi.on('select', onSelect);
+    return () => emblaApi.off('select', onSelect);
+  }, [emblaApi]);
+
+  return (
+    <div className="relative rounded-[32px] border border-white/15 bg-[linear-gradient(135deg,rgba(0,102,179,0.15)_0%,rgba(0,168,120,0.1)_50%,rgba(0,40,85,0.2)_100%)] p-4 shadow-[0_24px_70px_rgba(2,12,27,0.34)]">
+      <div className="overflow-hidden rounded-[24px]" ref={emblaRef}>
+        <div className="flex">
+          {productImages.map((img, i) => (
+            <div key={i} className="min-w-0 flex-[0_0_100%]">
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="h-auto w-full rounded-[24px] mix-blend-multiply"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Setas */}
+      <button
+        onClick={scrollPrev}
+        className="absolute left-6 top-1/2 -translate-y-1/2 rounded-full border border-white/20 bg-[#041b31]/70 p-2 text-white backdrop-blur-sm transition hover:bg-[#00A878]"
+      >
+        <ChevronLeft className="h-5 w-5" />
+      </button>
+      <button
+        onClick={scrollNext}
+        className="absolute right-6 top-1/2 -translate-y-1/2 rounded-full border border-white/20 bg-[#041b31]/70 p-2 text-white backdrop-blur-sm transition hover:bg-[#00A878]"
+      >
+        <ChevronRight className="h-5 w-5" />
+      </button>
+
+      {/* Dots */}
+      <div className="mt-3 flex justify-center gap-2">
+        {productImages.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => emblaApi && emblaApi.scrollTo(i)}
+            className={`h-2 rounded-full transition-all ${i === selectedIndex ? 'w-6 bg-[#00A878]' : 'w-2 bg-white/30'}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function HeroSection() {
   return (
@@ -103,14 +178,7 @@ export default function HeroSection() {
             <div className="relative">
               <div className="absolute -inset-6 rounded-[36px] bg-gradient-to-br from-[#00A878]/30 via-[#0066B3]/20 to-transparent blur-3xl" />
               <div className="absolute -inset-1 rounded-[36px] border border-white/10 bg-white/5 backdrop-blur-sm" />
-              <div className="relative rounded-[32px] border border-white/15 bg-[linear-gradient(135deg,rgba(0,102,179,0.15)_0%,rgba(0,168,120,0.1)_50%,rgba(0,40,85,0.2)_100%)] p-4 shadow-[0_24px_70px_rgba(2,12,27,0.34)]">
-                <div className="absolute inset-0 rounded-[32px] bg-gradient-to-b from-transparent via-transparent to-[#002855]/40" />
-                <img
-                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6990ca27ebb6e2fb5d662b83/9e156124c_1.jpg"
-                  alt="SWB - Sistema de Proteção Sacral"
-                  className="relative h-auto w-full rounded-[24px] mix-blend-multiply"
-                />
-              </div>
+              <ProductCarousel />
               <div className="mt-4 rounded-[28px] border border-white/15 bg-[#041b31]/75 p-5 backdrop-blur-md">
                 <p className="mb-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#9AF2D6]">Proposta de valor</p>
                 <p className="text-2xl font-bold text-white">Uma camada simples que reduz um problema caro.</p>
