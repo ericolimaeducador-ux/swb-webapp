@@ -103,20 +103,20 @@ export default function HeroSection() {
             <div className="relative">
               <div className="absolute -inset-6 rounded-[36px] bg-gradient-to-br from-[#00A878]/30 via-[#0066B3]/20 to-transparent blur-3xl" />
               <div className="absolute -inset-1 rounded-[36px] border border-white/10 bg-white/5 backdrop-blur-sm" />
-              <div className="relative overflow-hidden rounded-[32px] border border-white/15 bg-[linear-gradient(135deg,rgba(0,102,179,0.15)_0%,rgba(0,168,120,0.1)_50%,rgba(0,40,85,0.2)_100%)] p-4 shadow-[0_24px_70px_rgba(2,12,27,0.34)]">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#002855]/40" />
+              <div className="relative rounded-[32px] border border-white/15 bg-[linear-gradient(135deg,rgba(0,102,179,0.15)_0%,rgba(0,168,120,0.1)_50%,rgba(0,40,85,0.2)_100%)] p-4 shadow-[0_24px_70px_rgba(2,12,27,0.34)]">
+                <div className="absolute inset-0 rounded-[32px] bg-gradient-to-b from-transparent via-transparent to-[#002855]/40" />
                 <img
                   src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6990ca27ebb6e2fb5d662b83/9e156124c_1.jpg"
                   alt="SWB - Sistema de Proteção Sacral"
-                  className="h-auto w-full rounded-[24px] mix-blend-multiply"
+                  className="relative h-auto w-full rounded-[24px] mix-blend-multiply"
                 />
-                <div className="absolute bottom-8 left-8 right-8 rounded-[28px] border border-white/15 bg-[#041b31]/75 p-5 backdrop-blur-md">
-                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#9AF2D6]">Proposta de valor</p>
-                  <p className="text-2xl font-bold text-white">Uma camada simples que reduz um problema caro.</p>
-                  <p className="mt-2 text-sm leading-relaxed text-white/72">
-                    Produto pensado para integrar prevenção, operação e gestão com leitura rápida de benefício clínico.
-                  </p>
-                </div>
+              </div>
+              <div className="mt-4 rounded-[28px] border border-white/15 bg-[#041b31]/75 p-5 backdrop-blur-md">
+                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#9AF2D6]">Proposta de valor</p>
+                <p className="text-2xl font-bold text-white">Uma camada simples que reduz um problema caro.</p>
+                <p className="mt-2 text-sm leading-relaxed text-white/72">
+                  Produto pensado para integrar prevenção, operação e gestão com leitura rápida de benefício clínico.
+                </p>
               </div>
             </div>
           </motion.div>
