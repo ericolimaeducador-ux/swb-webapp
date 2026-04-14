@@ -43,6 +43,28 @@ const productImages = [
 
 
 export default function Marketplace() {
+  const [carouselApi, setCarouselApi] = React.useState(null);
+  const [currentSlide, setCurrentSlide] = React.useState(0);
+
+  React.useEffect(() => {
+    if (!carouselApi) {
+      return;
+    }
+
+    const onSelect = () => {
+      setCurrentSlide(carouselApi.selectedScrollSnap());
+    };
+
+    onSelect();
+    carouselApi.on('select', onSelect);
+    carouselApi.on('reInit', onSelect);
+
+    return () => {
+      carouselApi.off('select', onSelect);
+      carouselApi.off('reInit', onSelect);
+    };
+  }, [carouselApi]);
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero */}
@@ -94,7 +116,11 @@ export default function Marketplace() {
 
             {/* Product Image Carousel */}
             <div className="bg-white rounded-3xl shadow-lg p-6 mb-6">
-              <Carousel opts={{ loop: true }} className="w-full max-w-xl mx-auto">
+              <Carousel
+                opts={{ loop: true }}
+                setApi={setCarouselApi}
+                className="w-full max-w-xl mx-auto"
+              >
                 <CarouselContent>
                   {productImages.map((image) => (
                     <CarouselItem key={image.src}>
@@ -111,6 +137,25 @@ export default function Marketplace() {
                 <CarouselPrevious className="left-2" />
                 <CarouselNext className="right-2" />
               </Carousel>
+
+              <div className="mt-4 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  {productImages.map((image, index) => (
+                    <button
+                      key={image.src}
+                      type="button"
+                      aria-label={`Ir para imagem ${index + 1}`}
+                      onClick={() => carouselApi?.scrollTo(index)}
+                      className={`h-2.5 w-2.5 rounded-full transition-all ${
+                        currentSlide === index ? 'bg-[#0066B3] w-6' : 'bg-gray-300'
+                      }`}
+                    />
+                  ))}
+                </div>
+                <span className="text-sm text-gray-500 font-medium">
+                  {currentSlide + 1} / {productImages.length}
+                </span>
+              </div>
             </div>
 
             {/* Quick Features */}
