@@ -44,7 +44,7 @@ export default function Layout({ children, currentPageName }) {
   const headerBg = isScrolled || !isHome 
     ? 'bg-white/95 backdrop-blur-md shadow-sm' 
     : 'bg-transparent';
-  const textColor = isScrolled || !isHome ? 'text-gray-900' : 'text-white';
+  const textColor = isScrolled || !isHome ? 'text-gray-900' : 'text-gray-800';
   const logoColor = isScrolled || !isHome ? 'text-[#0066B3]' : 'text-white';
 
   return (

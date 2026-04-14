@@ -7,6 +7,13 @@ import {
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from '@/components/ui/carousel';
 import ContactForm from '../components/shared/ContactForm';
 
 const specifications = [
@@ -27,6 +34,12 @@ const features = [
 'Confortável para uso prolongado',
 'Permeável ao vapor',
 'Descartável após uso'];
+
+const productImages = [
+  { src: '/1.png', alt: 'SWB - Produto imagem 1' },
+  { src: '/2.png', alt: 'SWB - Produto imagem 2' },
+  { src: '/3.png', alt: 'SWB - Produto imagem 3' }
+];
 
 
 export default function Marketplace() {
@@ -79,13 +92,25 @@ export default function Marketplace() {
               </div>
             </div>
 
-            {/* Product Image - Packaging */}
-            <div className="bg-white rounded-3xl shadow-lg p-6 mb-6 flex justify-center">
-              <img
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6990ca27ebb6e2fb5d662b83/3175b57f8_1755480629769.jpg"
-                alt="SWB - Embalagem do Produto"
-                className="w-[65%] h-auto rounded-2xl" />
-              
+            {/* Product Image Carousel */}
+            <div className="bg-white rounded-3xl shadow-lg p-6 mb-6">
+              <Carousel opts={{ loop: true }} className="w-full max-w-xl mx-auto">
+                <CarouselContent>
+                  {productImages.map((image) => (
+                    <CarouselItem key={image.src}>
+                      <div className="flex justify-center">
+                        <img
+                          src={image.src}
+                          alt={image.alt}
+                          className="w-[65%] h-auto rounded-2xl"
+                        />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="left-2" />
+                <CarouselNext className="right-2" />
+              </Carousel>
             </div>
 
             {/* Quick Features */}
