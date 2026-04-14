@@ -45,7 +45,12 @@ export default function Layout({ children, currentPageName }) {
     ? 'bg-white/95 backdrop-blur-md shadow-sm' 
     : 'bg-transparent';
   const textColor = isScrolled || !isHome ? 'text-gray-900' : 'text-gray-800';
-  const logoColor = isScrolled || !isHome ? 'text-[#0066B3]' : 'text-white';
+  const logoShell = isScrolled || !isHome
+    ? 'bg-white/90 border border-gray-200/80 shadow-sm'
+    : 'bg-white/80 border border-white/80 shadow-sm';
+  const navShell = isScrolled || !isHome
+    ? 'bg-white/85 border border-gray-200/80 shadow-sm'
+    : 'bg-white/65 border border-white/70 shadow-sm';
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -54,21 +59,28 @@ export default function Layout({ children, currentPageName }) {
         <div className="container mx-auto px-6 lg:px-12">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link to={createPageUrl('Home')} className="flex items-center">
+            <Link
+              to={createPageUrl('Home')}
+              className={`flex items-center rounded-2xl px-3 py-2 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md ${logoShell}`}
+            >
               <img 
                 src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6990ca27ebb6e2fb5d662b83/6ac36028e_Logoswb.jpg" 
                 alt="SWB - Sacral Protection" 
-                className="h-12 w-auto"
+                className="h-10 w-auto"
               />
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-8">
+            <nav className={`hidden md:flex items-center gap-1 rounded-full px-2 py-2 backdrop-blur-md transition-all duration-300 ${navShell}`}>
               {navLinks.map((link) => (
                 <Link
                   key={link.page}
                   to={createPageUrl(link.page)}
-                  className={`font-medium transition-colors ${textColor} hover:text-[#00A878] ${currentPageName === link.page ? 'text-[#00A878]' : ''}`}
+                  className={`rounded-full px-5 py-2.5 text-[17px] font-medium transition-all duration-300 ${
+                    currentPageName === link.page
+                      ? 'bg-[#0066B3] text-white shadow-sm'
+                      : `${textColor} hover:bg-white/70 hover:text-[#0066B3]`
+                  }`}
                 >
                   {link.label}
                 </Link>
@@ -82,7 +94,7 @@ export default function Layout({ children, currentPageName }) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button className="bg-[#00A878] hover:bg-[#008f66] text-white font-semibold px-6 rounded-xl">
+                <Button className="bg-[#00A878] hover:bg-[#008f66] text-white font-semibold px-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
                   Falar com Especialista
                 </Button>
               </a>
@@ -91,7 +103,7 @@ export default function Layout({ children, currentPageName }) {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`md:hidden p-2 rounded-lg ${textColor}`}
+              className={`md:hidden p-2 rounded-xl border backdrop-blur-md transition-colors ${textColor} ${isScrolled || !isHome ? 'bg-white/90 border-gray-200' : 'bg-white/75 border-white/80'}`}
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
