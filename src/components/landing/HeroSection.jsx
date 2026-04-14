@@ -89,10 +89,15 @@ export default function HeroSection() {
               <div className="absolute -inset-2 bg-gradient-to-tr from-[#004080]/20 to-[#00A878]/10 rounded-3xl blur-xl" />
               <div className="relative rounded-3xl overflow-hidden" style={{background: 'linear-gradient(135deg, rgba(0,102,179,0.15) 0%, rgba(0,168,120,0.1) 50%, rgba(0,40,85,0.2) 100%)'}}>
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#002855]/40" />
-                <img
-                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6990ca27ebb6e2fb5d662b83/9e156124c_1.jpg"
-                  alt="SWB - Sistema de Proteção Sacral"
-                  className="w-full h-auto mix-blend-multiply" />
+                <div className="relative aspect-[16/9] w-full">
+                  <iframe
+                    src="https://www.youtube.com/embed/YdK9k1CxSLI"
+                    title="SWB Brasil - Vídeo institucional"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 h-full w-full"
+                  />
+                </div>
               </div>
             </div>
           </motion.div>
