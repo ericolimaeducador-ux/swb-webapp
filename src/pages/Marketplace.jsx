@@ -16,7 +16,7 @@ const specifications = [
 { label: 'Dimensões', value: '18cm x 20cm (padrão adulto)' },
 { label: 'Espessura', value: '5mm de proteção' },
 { label: 'Cor', value: 'Branco hospitalar' },
-{ label: 'Embalagem', value: 'Individual, estéril' },
+{ label: 'Embalagem', value: 'Individual, não estéril' },
 { label: 'Validade', value: '3 anos (fechado)' }];
 
 
