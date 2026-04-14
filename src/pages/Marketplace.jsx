@@ -15,7 +15,7 @@ const specifications = [
 { label: 'Adesivo', value: 'Hipoalergênico e suave à pele' },
 { label: 'Dimensões', value: '18cm x 20cm (padrão adulto)' },
 { label: 'Espessura', value: '5mm de proteção' },
-{ label: 'Cor', value: 'Branco hospitalar' },
+{ label: 'Cor', value: 'Cinza grafite' },
 { label: 'Embalagem', value: 'Individual, não estéril' },
 { label: 'Validade', value: '3 anos (fechado)' }];
 
