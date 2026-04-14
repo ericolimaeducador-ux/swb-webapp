@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { 
-  Menu, X, ChevronRight, 
+  Shield, Menu, X, ChevronRight, 
   Instagram, Youtube, Music2,
-  Mail, Phone, MapPin, ArrowRight, Stethoscope
+  Mail, Phone, MapPin
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -41,49 +41,34 @@ export default function Layout({ children, currentPageName }) {
   }, [location]);
 
   const isHome = currentPageName === 'Home';
-  const headerSurface = isScrolled || !isHome
-    ? 'border-white/80 bg-white/80 shadow-[0_18px_50px_rgba(15,23,42,0.09)] backdrop-blur-xl'
-    : 'border-white/15 bg-white/8 backdrop-blur-md';
-  const textColor = 'text-slate-800';
-  const navPillSurface = isScrolled || !isHome
-    ? 'bg-slate-50/90 ring-1 ring-slate-200/80'
-    : 'bg-white/10 ring-1 ring-white/15';
-  const topBadgeSurface = isScrolled || !isHome
-    ? 'bg-[#E9F6F1] text-[#006B4F]'
-    : 'bg-[#E9F6F1]/85 text-[#0B5B45]';
+  const headerBg = isScrolled || !isHome 
+    ? 'bg-white/95 backdrop-blur-md shadow-sm' 
+    : 'bg-transparent';
+  const textColor = isScrolled || !isHome ? 'text-gray-900' : 'text-white';
+  const logoColor = isScrolled || !isHome ? 'text-[#0066B3]' : 'text-white';
 
   return (
-    <div className="swb-shell min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 px-4 pt-4 transition-all duration-300 sm:px-6 lg:px-8">
-        <div className={`section-frame rounded-[28px] border transition-all duration-300 ${headerSurface}`}>
-          <div className="flex h-20 items-center justify-between gap-4 px-4 sm:px-6">
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerBg}`}>
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link to={createPageUrl('Home')} className="flex items-center gap-3">
-              <img
-                src="/logoswb.jpg"
-                alt="SWB - Sacral Protection"
-                className="h-12 w-auto rounded-2xl"
+            <Link to={createPageUrl('Home')} className="flex items-center">
+              <img 
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6990ca27ebb6e2fb5d662b83/6ac36028e_Logoswb.jpg" 
+                alt="SWB - Sacral Protection" 
+                className="h-12 w-auto"
               />
-              <div className="hidden min-[420px]:block">
-                <p className={`text-sm font-semibold uppercase tracking-[0.24em] ${textColor}`}>SWB Brasil</p>
-                <p className={`text-xs ${isScrolled || !isHome ? 'text-slate-500' : 'text-slate-600'}`}>
-                  Proteção sacral com foco assistencial
-                </p>
-              </div>
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className={`hidden items-center gap-2 rounded-full px-3 py-2 md:flex ${navPillSurface}`}>
+            <nav className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (
                 <Link
                   key={link.page}
                   to={createPageUrl(link.page)}
-                  className={`rounded-full px-4 py-2 text-sm font-semibold transition-all ${
-                    currentPageName === link.page
-                      ? 'bg-[#00A878] text-white shadow-[0_10px_24px_rgba(0,168,120,0.24)]'
-                      : `${textColor} hover:bg-white/10 hover:text-[#00A878]`
-                  }`}
+                  className={`font-medium transition-colors ${textColor} hover:text-[#00A878] ${currentPageName === link.page ? 'text-[#00A878]' : ''}`}
                 >
                   {link.label}
                 </Link>
@@ -91,18 +76,14 @@ export default function Layout({ children, currentPageName }) {
             </nav>
 
             {/* CTA Button */}
-            <div className="hidden items-center gap-3 lg:flex">
-              <div className={`rounded-full px-4 py-2 text-xs font-semibold ${topBadgeSurface}`}>
-                Solução para hospitais, ILPIs e home care
-              </div>
+            <div className="hidden md:block">
               <a 
                 href="https://wa.me/5511947391805?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20SWB."
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button className="rounded-full bg-[#00A878] px-6 font-semibold text-white shadow-[0_12px_30px_rgba(0,168,120,0.24)] hover:bg-[#008f66]">
+                <Button className="bg-[#00A878] hover:bg-[#008f66] text-white font-semibold px-6 rounded-xl">
                   Falar com Especialista
-                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </a>
             </div>
@@ -124,9 +105,9 @@ export default function Layout({ children, currentPageName }) {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="rounded-b-[28px] border-t border-slate-200/80 bg-white/95 md:hidden"
+              className="md:hidden bg-white border-t"
             >
-              <div className="px-6 py-6">
+              <div className="container mx-auto px-6 py-6">
                 <nav className="space-y-4">
                   {navLinks.map((link) => (
                     <Link
@@ -139,16 +120,13 @@ export default function Layout({ children, currentPageName }) {
                     </Link>
                   ))}
                 </nav>
-                <div className="mt-6 space-y-3">
-                  <div className="rounded-2xl bg-slate-50 p-4 text-sm text-slate-600">
-                    Atendimento consultivo para instituições e equipes de enfermagem.
-                  </div>
+                <div className="mt-6">
                   <a 
                     href="https://wa.me/5511947391805"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Button className="w-full rounded-xl bg-[#00A878] py-6 font-semibold text-white hover:bg-[#008f66]">
+                    <Button className="w-full bg-[#00A878] hover:bg-[#008f66] text-white font-semibold py-6 rounded-xl">
                       Falar com Especialista
                     </Button>
                   </a>
@@ -160,52 +138,19 @@ export default function Layout({ children, currentPageName }) {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 pt-28">
+      <main className="flex-1 pt-20">
         {children}
       </main>
 
       {/* Footer */}
-      <footer className="relative overflow-hidden bg-[#07121f] text-white">
-        <div className="absolute inset-0">
-          <div className="absolute left-[-10%] top-0 h-72 w-72 rounded-full bg-[#0066B3]/20 blur-3xl" />
-          <div className="absolute bottom-0 right-[-8%] h-80 w-80 rounded-full bg-[#00A878]/20 blur-3xl" />
-        </div>
-
-        <div className="section-frame relative py-16">
-          <div className="mb-12 grid gap-6 rounded-[32px] border border-white/10 bg-white/5 p-8 backdrop-blur-sm lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
-            <div>
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white/85">
-                <Stethoscope className="h-4 w-4 text-[#00A878]" />
-                Atualização de cuidado, não só de produto
-              </div>
-              <h3 className="max-w-2xl text-3xl font-bold leading-tight text-white md:text-4xl">
-                Reduza retrabalho e preserve o cuidado com uma camada extra de proteção assistencial.
-              </h3>
-            </div>
-            <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
-              <a
-                href="https://wa.me/5511947391805?text=Ol%C3%A1!%20Quero%20entender%20como%20o%20SWB%20se%20encaixa%20na%20minha%20institui%C3%A7%C3%A3o."
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button className="w-full rounded-full bg-[#00A878] px-6 py-6 font-semibold text-white hover:bg-[#008f66] sm:w-auto">
-                  Falar com Especialista
-                </Button>
-              </a>
-              <Link to={createPageUrl('BaseCientifica')}>
-                <Button variant="outline" className="w-full rounded-full border-white/20 bg-white/5 px-6 py-6 font-semibold text-white hover:bg-white/10 hover:text-white sm:w-auto">
-                  Ver Base Científica
-                </Button>
-              </Link>
-            </div>
-          </div>
-
+      <footer className="bg-gray-900 text-white">
+        <div className="container mx-auto px-6 lg:px-12 py-16">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
             {/* Brand */}
             <div className="lg:col-span-1">
               <div className="mb-6">
                 <img 
-                  src="/logoswb.jpg" 
+                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6990ca27ebb6e2fb5d662b83/6ac36028e_Logoswb.jpg" 
                   alt="SWB - Sacral Protection" 
                   className="h-14 w-auto"
                 />
@@ -291,9 +236,9 @@ export default function Layout({ children, currentPageName }) {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10">
-          <div className="section-frame py-6">
+          <div className="container mx-auto px-6 lg:px-12 py-6">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-gray-400 text-sm">
-              <p>© 2026 SWB - Sistema de Proteção Sacral. Todos os direitos reservados.</p>
+              <p>© 2024 SWB - Sistema de Proteção Sacral. Todos os direitos reservados.</p>
               <div className="flex gap-6">
                 <a href="#" className="hover:text-white transition-colors">Política de Privacidade</a>
                 <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>

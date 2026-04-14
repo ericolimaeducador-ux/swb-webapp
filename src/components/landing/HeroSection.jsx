@@ -1,141 +1,49 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
-import { Shield, MessageCircle, ArrowRight, BadgeCheck, Activity, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Shield, MessageCircle, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
-import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
-
-const productImages = [
-  {
-    src: '/1.png',
-    alt: 'SWB - Vista frontal do produto',
-  },
-  {
-    src: '/2.png',
-    alt: 'SWB - Vista lateral do produto',
-  },
-  {
-    src: '/3.png',
-    alt: 'SWB - Detalhe de aplicação',
-  },
-];
-
-function ProductCarousel() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 3500, stopOnInteraction: true })]);
-  const [selectedIndex, setSelectedIndex] = useState(0);
-
-  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
-    emblaApi.on('select', onSelect);
-    return () => emblaApi.off('select', onSelect);
-  }, [emblaApi]);
-
-  return (
-    <div className="relative rounded-[32px] border border-white/15 bg-[linear-gradient(135deg,rgba(0,102,179,0.15)_0%,rgba(0,168,120,0.1)_50%,rgba(0,40,85,0.2)_100%)] p-4 shadow-[0_24px_70px_rgba(2,12,27,0.34)]">
-      <div className="overflow-hidden rounded-[24px]" ref={emblaRef}>
-        <div className="flex">
-          {productImages.map((img, i) => (
-            <div key={i} className="min-w-0 flex-[0_0_100%]">
-              <img
-                src={img.src}
-                alt={img.alt}
-                className="h-auto w-full rounded-[24px] mix-blend-multiply"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Setas */}
-      <button
-        onClick={scrollPrev}
-        className="absolute left-6 top-1/2 -translate-y-1/2 rounded-full border border-white/20 bg-[#041b31]/70 p-2 text-white backdrop-blur-sm transition hover:bg-[#00A878]"
-      >
-        <ChevronLeft className="h-5 w-5" />
-      </button>
-      <button
-        onClick={scrollNext}
-        className="absolute right-6 top-1/2 -translate-y-1/2 rounded-full border border-white/20 bg-[#041b31]/70 p-2 text-white backdrop-blur-sm transition hover:bg-[#00A878]"
-      >
-        <ChevronRight className="h-5 w-5" />
-      </button>
-
-      {/* Dots */}
-      <div className="mt-3 flex justify-center gap-2">
-        {productImages.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => emblaApi && emblaApi.scrollTo(i)}
-            className={`h-2 rounded-full transition-all ${i === selectedIndex ? 'w-6 bg-[#00A878]' : 'w-2 bg-white/30'}`}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
 
 export default function HeroSection() {
   return (
-    <section className="relative flex min-h-[92vh] items-center overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(38,208,164,0.18),_transparent_18%),linear-gradient(135deg,_#0a3f72_0%,_#062a4f_46%,_#041729_100%)]">
+    <section className="relative py-12 md:py-20 lg:py-24 flex items-center overflow-hidden bg-gradient-to-br from-[#0066B3] via-[#004080] to-[#002855]">
       {/* Abstract medical pattern overlay */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute left-[-6%] top-16 h-72 w-72 rounded-full bg-white blur-3xl" />
-        <div className="absolute bottom-10 right-[-2%] h-96 w-96 rounded-full bg-[#00A878] blur-3xl" />
-        <div className="absolute left-1/2 top-1/2 h-[620px] w-[620px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/15" />
-        <div className="absolute left-1/2 top-1/2 h-[820px] w-[820px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:72px_72px] [mask-image:linear-gradient(180deg,rgba(0,0,0,0.75),transparent)]" />
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#00A878] rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/20 rounded-full" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-white/10 rounded-full" />
       </div>
 
-      <div className="section-frame relative z-10">
-        <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}>
             
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 backdrop-blur-sm">
-              <Sparkles className="h-4 w-4 text-[#7EF0C8]" />
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
               <Shield className="w-4 h-4 text-[#00A878]" />
-              <span className="text-sm font-medium text-white/90">Tecnologia em Proteção Sacral</span>
+              <span className="text-white/90 text-sm font-medium">Tecnologia em Proteção Sacral</span>
             </div>
 
-            <h1 className="mb-6 max-w-3xl text-5xl leading-[0.95] text-white md:text-6xl lg:text-7xl">
-              Menos contaminação.
-              <span className="block text-[#9AF2D6]">Mais controle assistencial.</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+              SWB: Cada cuidado
+              <span className="block text-[#00A878]">importa.</span>
             </h1>
 
-            <p className="mb-8 max-w-2xl text-xl leading-relaxed text-white/78 md:text-2xl">
+            <p className="text-base sm:text-lg md:text-xl text-white/80 leading-relaxed mb-8 max-w-xl">
               Barreira física inteligente contra contaminação fecal. 
-              <span className="font-semibold text-white"> Menos retrabalho. Mais eficiência assistencial. 
+              <span className="text-white font-medium"> Menos retrabalho. Mais eficiência assistencial. 
               Gestão inteligente de custos hospitalares.</span>
             </p>
 
-            <div className="mb-10 grid max-w-2xl gap-3 sm:grid-cols-3">
-              <div className="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-sm">
-                <p className="mb-1 text-sm font-semibold uppercase tracking-[0.18em] text-white/55">Foco</p>
-                <p className="text-base font-semibold text-white">Proteção da região sacral</p>
-              </div>
-              <div className="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-sm">
-                <p className="mb-1 text-sm font-semibold uppercase tracking-[0.18em] text-white/55">Impacto</p>
-                <p className="text-base font-semibold text-white">Redução de retrabalho clínico</p>
-              </div>
-              <div className="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-sm">
-                <p className="mb-1 text-sm font-semibold uppercase tracking-[0.18em] text-white/55">Aplicação</p>
-                <p className="text-base font-semibold text-white">Hospitais, ILPIs e home care</p>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 mb-8 lg:mb-0">
               <Link to={createPageUrl('Marketplace')}>
                 <Button
                   size="lg"
-                  className="rounded-full bg-[#00A878] px-8 py-6 text-lg font-semibold text-white shadow-lg shadow-[#00A878]/30 transition-all hover:scale-105 hover:bg-[#008f66]">
+                  className="w-full sm:w-auto bg-[#00A878] hover:bg-[#008f66] text-white font-semibold px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-xl shadow-lg shadow-[#00A878]/30 transition-all hover:scale-105">
                   
                   Solicitar Orçamento
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -149,7 +57,7 @@ export default function HeroSection() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="rounded-full border-2 border-white bg-white/10 px-8 py-6 text-lg font-semibold text-white backdrop-blur-sm transition-all hover:scale-105 hover:bg-white hover:text-[#0066B3]">
+                  className="w-full sm:w-auto border-2 border-white bg-white/10 text-white hover:bg-white hover:text-[#0066B3] font-semibold px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-xl backdrop-blur-sm transition-all hover:scale-105">
                   
                   <MessageCircle className="mr-2 w-5 h-5" />
                   Falar com Especialista
@@ -157,14 +65,15 @@ export default function HeroSection() {
               </a>
             </div>
 
-            <div className="mt-12 flex flex-wrap items-center gap-6 text-white/85">
-              <div className="flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-sm">
-                <BadgeCheck className="h-5 w-5 text-[#7EF0C8]" />
-                <span className="text-sm font-medium">Design orientado à rotina assistencial</span>
+            <div className="mt-8 lg:mt-12 flex flex-col sm:flex-row items-center justify-start gap-6 sm:gap-8 flex-wrap">
+              <div className="text-center">
+                <p className="text-2xl sm:text-3xl font-bold text-white">98%</p>
+                <p className="text-white/60 text-xs sm:text-sm">Satisfação</p>
               </div>
-              <div className="flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-sm">
-                <Activity className="h-5 w-5 text-[#7EF0C8]" />
-                <span className="text-sm font-medium">Pensado para eficiência clínica e econômica</span>
+              <div className="hidden sm:block w-px h-12 bg-white/20" />
+              <div className="text-center">
+                <p className="text-2xl sm:text-3xl font-bold text-white">24h</p>
+                <p className="text-white/60 text-xs sm:text-sm">Suporte</p>
               </div>
             </div>
           </motion.div>
@@ -176,15 +85,14 @@ export default function HeroSection() {
             className="hidden lg:block">
             
             <div className="relative">
-              <div className="absolute -inset-6 rounded-[36px] bg-gradient-to-br from-[#00A878]/30 via-[#0066B3]/20 to-transparent blur-3xl" />
-              <div className="absolute -inset-1 rounded-[36px] border border-white/10 bg-white/5 backdrop-blur-sm" />
-              <ProductCarousel />
-              <div className="mt-4 rounded-[28px] border border-white/15 bg-[#041b31]/75 p-5 backdrop-blur-md">
-                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#9AF2D6]">Proposta de valor</p>
-                <p className="text-2xl font-bold text-white">Uma camada simples que reduz um problema caro.</p>
-                <p className="mt-2 text-sm leading-relaxed text-white/72">
-                  Produto pensado para integrar prevenção, operação e gestão com leitura rápida de benefício clínico.
-                </p>
+              <div className="absolute -inset-4 bg-gradient-to-br from-[#00A878]/30 via-[#0066B3]/20 to-transparent rounded-3xl blur-3xl" />
+              <div className="absolute -inset-2 bg-gradient-to-tr from-[#004080]/20 to-[#00A878]/10 rounded-3xl blur-xl" />
+              <div className="relative rounded-3xl overflow-hidden" style={{background: 'linear-gradient(135deg, rgba(0,102,179,0.15) 0%, rgba(0,168,120,0.1) 50%, rgba(0,40,85,0.2) 100%)'}}>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#002855]/40" />
+                <img
+                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6990ca27ebb6e2fb5d662b83/9e156124c_1.jpg"
+                  alt="SWB - Sistema de Proteção Sacral"
+                  className="w-full h-auto mix-blend-multiply" />
               </div>
             </div>
           </motion.div>
