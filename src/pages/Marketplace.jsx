@@ -248,6 +248,24 @@ export default function Marketplace() {
                   </div>
                 </div>
 
+                {/* Instruções de Uso */}
+                <div className="bg-white rounded-2xl shadow-lg p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                    <FileText className="w-5 h-5 text-[#0066B3]" />
+                    Instruções de Uso
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    Clique na imagem abaixo para acessar as instruções completas de uso do SWB.
+                  </p>
+                  <a href="/arquivos/SWB_Instrucoes_de_uso.html" target="_blank" rel="noopener noreferrer">
+                    <img
+                      src="/logoswb.jpg"
+                      alt="Instruções de Uso do SWB"
+                      className="w-full max-w-sm mx-auto rounded-xl shadow-md hover:shadow-lg transition-shadow cursor-pointer"
+                    />
+                  </a>
+                </div>
+
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a

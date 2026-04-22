@@ -91,7 +91,7 @@ export default function HeroSection() {
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#002855]/40" />
                 <div className="relative aspect-[16/9] w-full">
                   <iframe
-                    src="https://www.youtube.com/embed/YdK9k1CxSLI"
+                    src="https://youtu.be/d1x5yqMurLA"
                     title="SWB Brasil - Vídeo institucional"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
