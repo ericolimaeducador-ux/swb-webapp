@@ -105,7 +105,7 @@ export default function Marketplace() {
             <div className="bg-white rounded-3xl shadow-lg p-6 mb-6">
               <div className="aspect-video rounded-2xl overflow-hidden">
                 <iframe
-                  src="https://www.youtube.com/embed/OkPlJGnX_tw"
+                  src="https://www.youtube.com/embed/k1HT-8EoG-c"
                   title="SWB - Vídeo de Aplicação"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
