@@ -53,7 +53,7 @@ export default function AudienceSection() {
             Para Quem é o
             <span className="text-[#0066B3]"> SWB?</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             Desenvolvido para atender as necessidades de diferentes ambientes de cuidado, 
             sempre com foco na proteção do paciente e eficiência da equipe.
           </p>
@@ -74,12 +74,12 @@ export default function AudienceSection() {
                   <audience.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{audience.title}</h3>
-                <p className="text-gray-600 mb-4">{audience.description}</p>
+                <p className="text-gray-700 mb-4">{audience.description}</p>
                 <div className="space-y-2">
                   {audience.features.map((feature, fIndex) => (
                     <div key={fIndex} className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-[#00A878]" />
-                      <span className="text-sm text-gray-500">{feature}</span>
+                      <span className="text-sm text-gray-700">{feature}</span>
                     </div>
                   ))}
                 </div>

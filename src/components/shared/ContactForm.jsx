@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Send } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 export default function ContactForm({ showQuantity = false }) {
   const [form, setForm] = useState({
@@ -12,21 +13,44 @@ export default function ContactForm({ showQuantity = false }) {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          phone: form.phone,
+          institution: form.institution,
+          quantity: form.quantity,
+          message: form.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+      setSubmitted(true);
+    } catch (error) {
+      console.error('Erro ao enviar email:', error);
+      alert('Erro ao enviar mensagem. Tente novamente.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
     return (
       <div className="text-center py-10">
         <p className="text-2xl font-bold text-[#0066B3] mb-2">Mensagem enviada!</p>
-        <p className="text-gray-600">Nossa equipe entrará em contato em breve.</p>
+        <p className="text-gray-700">Nossa equipe entrará em contato em breve.</p>
       </div>
     );
   }
@@ -107,9 +131,9 @@ export default function ContactForm({ showQuantity = false }) {
         />
       </div>
 
-      <Button type="submit" className="w-full bg-[#0066B3] hover:bg-[#004080] text-white">
+      <Button type="submit" disabled={loading} className="w-full bg-[#0066B3] hover:bg-[#004080] text-white">
         <Send className="w-4 h-4 mr-2" />
-        Enviar mensagem
+        {loading ? 'Enviando...' : 'Enviar mensagem'}
       </Button>
     </form>
   );

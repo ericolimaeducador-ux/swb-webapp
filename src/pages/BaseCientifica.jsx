@@ -72,7 +72,7 @@ export default function BaseCientifica() {
           ) : (
             <div className="bg-white border border-dashed border-slate-300 rounded-2xl p-8 text-center">
               <h2 className="text-xl font-semibold text-slate-900 mb-2">Nenhum artigo encontrado</h2>
-              <p className="text-slate-600">
+              <p className="text-slate-700">
                 Adicione os arquivos dos artigos na pasta src/artigos para que apareçam nesta página.
               </p>
             </div>

@@ -48,7 +48,7 @@ export default function ScienceSection() {
               Base Científica
               <span className="text-[#0066B3]"> Sólida</span>
             </h2>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
               O SWB é fundamentado em evidências científicas consolidadas sobre prevenção 
               de lesões cutâneas e manejo de pacientes incontinentes.
             </p>
@@ -68,7 +68,7 @@ export default function ScienceSection() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 text-sm">{topic.title}</h4>
-                    <p className="text-gray-600 text-xs mt-1">{topic.description}</p>
+                    <p className="text-gray-700 text-xs mt-1">{topic.description}</p>
                   </div>
                 </motion.div>
               ))}

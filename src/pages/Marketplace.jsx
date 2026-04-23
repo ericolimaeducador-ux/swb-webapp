@@ -152,7 +152,7 @@ export default function Marketplace() {
                     />
                   ))}
                 </div>
-                <span className="text-sm text-gray-500 font-medium">
+                <span className="text-sm text-gray-600 font-medium">
                   {currentSlide + 1} / {productImages.length}
                 </span>
               </div>
@@ -168,7 +168,7 @@ export default function Marketplace() {
                 {features.map((feature, index) =>
                 <div key={index} className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#00A878] mt-2 flex-shrink-0" />
-                    <span className="text-gray-600 text-sm">{feature}</span>
+                    <span className="text-gray-700 text-sm">{feature}</span>
                   </div>
                 )}
               </div>
@@ -191,7 +191,7 @@ export default function Marketplace() {
                 {/* Description */}
                 <div className="bg-white rounded-2xl shadow-lg p-6">
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">Descrição do Produto</h2>
-                  <p className="text-gray-600 leading-relaxed mb-6">
+                  <p className="text-gray-700 leading-relaxed mb-6">
                     O SWB (Sistema de Proteção para Região Sacral) é um dispositivo médico 
                     desenvolvido para criar uma barreira física protetora na região sacral de 
                     pacientes incontinentes. Fabricado em espuma de poliuretano de alta qualidade, 
@@ -219,7 +219,7 @@ export default function Marketplace() {
                       key={index}
                       className="flex justify-between items-center py-3 border-b border-gray-100 last:border-0">
                       
-                        <span className="text-gray-500">{spec.label}</span>
+                        <span className="text-gray-700">{spec.label}</span>
                         <span className="font-medium text-gray-900">{spec.value}</span>
                       </div>
                     )}
@@ -234,15 +234,15 @@ export default function Marketplace() {
                   </h3>
                   <div className="space-y-3">
                     <div className="flex justify-between items-center py-3 border-b border-gray-100">
-                      <span className="text-gray-500">Número de Notificação ANVISA</span>
+                      <span className="text-gray-700">Número de Notificação ANVISA</span>
                       <span className="font-medium text-gray-900">80220130014</span>
                     </div>
                     <div className="flex justify-between items-center py-3 border-b border-gray-100">
-                      <span className="text-gray-500">Classificação</span>
+                      <span className="text-gray-700">Classificação</span>
                       <span className="font-medium text-gray-900">Dispositivo Médico Classe I</span>
                     </div>
                     <div className="flex justify-between items-center py-3">
-                      <span className="text-gray-500">Fabricação</span>
+                      <span className="text-gray-700">Fabricação</span>
                       <span className="font-medium text-gray-900">Brasil</span>
                     </div>
                   </div>
@@ -254,7 +254,7 @@ export default function Marketplace() {
                     <FileText className="w-5 h-5 text-[#0066B3]" />
                     Instruções de Uso
                   </h3>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-gray-700 mb-4">
                     Clique na imagem abaixo para acessar as instruções completas de uso do SWB.
                   </p>
                   <a href="/arquivos/SWB_Instrucoes_de_uso.html" target="_blank" rel="noopener noreferrer">
@@ -285,7 +285,7 @@ export default function Marketplace() {
               <TabsContent value="quote">
                 <div className="bg-white rounded-2xl shadow-lg p-6">
                   <h2 className="text-2xl font-bold text-gray-900 mb-2">Solicitar Orçamento</h2>
-                  <p className="text-gray-600 mb-6">
+                  <p className="text-gray-700 mb-6">
                     Preencha o formulário abaixo e nossa equipe entrará em contato em até 24 horas úteis.
                   </p>
                   <ContactForm showQuantity={true} />

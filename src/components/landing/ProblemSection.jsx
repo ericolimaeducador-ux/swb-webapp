@@ -55,7 +55,7 @@ export default function ProblemSection() {
             O Custo Oculto da
             <span className="text-red-600"> Contaminação Fecal</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             Pacientes incontinentes representam um desafio diário para equipes de enfermagem. 
             Cada contaminação gera uma cascata de custos invisíveis que se acumulam silenciosamente.
           </p>
@@ -76,7 +76,7 @@ export default function ProblemSection() {
                   <problem.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{problem.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{problem.description}</p>
+                <p className="text-gray-700 leading-relaxed">{problem.description}</p>
               </div>
             </motion.div>
           ))}
@@ -101,12 +101,12 @@ export default function ProblemSection() {
             <div className="flex items-center gap-4 bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
               <div className="text-center px-6">
                 <p className="text-4xl font-bold text-[#00A878]">40%</p>
-                <p className="text-gray-400 text-sm mt-1">dos pacientes<br/>são incontinentes</p>
+                <p className="text-gray-700 text-sm mt-1">dos pacientes<br/>são incontinentes</p>
               </div>
               <div className="w-px h-16 bg-white/20" />
               <div className="text-center px-6">
                 <p className="text-4xl font-bold text-[#00A878]">3x</p>
-                <p className="text-gray-400 text-sm mt-1">mais trocas<br/>de curativos</p>
+                <p className="text-gray-700 text-sm mt-1">mais trocas<br/>de curativos</p>
               </div>
             </div>
           </div>

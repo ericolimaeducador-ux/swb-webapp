@@ -53,7 +53,7 @@ export default function NursingImpactSection() {
             Mais Tempo para o que
             <span className="text-[#00A878]"> Realmente Importa</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             A enfermagem merece ferramentas que facilitem seu trabalho, não que o compliquem. 
             O SWB foi pensado para quem está na linha de frente do cuidado.
           </p>
@@ -74,10 +74,10 @@ export default function NursingImpactSection() {
                   <impact.icon className="w-8 h-8 text-[#00A878] group-hover:text-white transition-colors" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{impact.title}</h3>
-                <p className="text-gray-600 text-sm mb-6 leading-relaxed">{impact.description}</p>
+                <p className="text-gray-700 text-sm mb-6 leading-relaxed">{impact.description}</p>
                 <div className="pt-4 border-t border-gray-100">
                   <p className="text-3xl font-bold text-[#00A878]">{impact.stat}</p>
-                  <p className="text-gray-500 text-sm">{impact.statLabel}</p>
+                  <p className="text-gray-700 text-sm">{impact.statLabel}</p>
                 </div>
               </div>
             </motion.div>

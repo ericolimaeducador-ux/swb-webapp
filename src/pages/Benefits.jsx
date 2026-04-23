@@ -99,7 +99,7 @@ function BenefitCard({ benefit, index, color }) {
           <benefit.icon className="w-7 h-7 text-white" />
         </div>
         <h3 className="text-xl font-bold text-gray-900 mb-3">{benefit.title}</h3>
-        <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
+        <p className="text-gray-700 leading-relaxed">{benefit.description}</p>
       </div>
     </motion.div>
   );
@@ -117,7 +117,7 @@ function BenefitSection({ title, subtitle, benefits, color, bgColor }) {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{title}</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">{subtitle}</p>
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">{subtitle}</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

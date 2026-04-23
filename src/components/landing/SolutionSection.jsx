@@ -45,7 +45,7 @@ export default function SolutionSection() {
               SWB: Proteção
               <span className="text-[#0066B3]"> Inteligente</span>
             </h2>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
               O Sistema de Proteção para Região Sacral representa uma abordagem inovadora 
               e estratégica para um dos maiores desafios do cuidado ao paciente incontinente.
             </p>
@@ -65,7 +65,7 @@ export default function SolutionSection() {
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-900 mb-1">{feature.title}</h3>
-                    <p className="text-gray-600 text-sm">{feature.description}</p>
+                    <p className="text-gray-700 text-sm">{feature.description}</p>
                   </div>
                 </motion.div>
               ))}

@@ -100,21 +100,21 @@ export default function EconomicImpactSection() {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">Simulação de Economia</h3>
               </div>
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-gray-700 mb-6 leading-relaxed">
                 Para um hospital com 100 leitos e média de 30% de pacientes incontinentes, 
                 a prevenção de apenas 50% das contaminações pode representar economia significativa.
               </p>
               <div className="space-y-3">
                 <div className="flex justify-between items-center py-3 border-b border-gray-100">
-                  <span className="text-gray-600">Economia mensal estimada</span>
+                  <span className="text-gray-700">Economia mensal estimada</span>
                   <span className="text-2xl font-bold text-[#0066B3]">R$ 15.000</span>
                 </div>
                 <div className="flex justify-between items-center py-3 border-b border-gray-100">
-                  <span className="text-gray-600">Economia anual projetada</span>
+                  <span className="text-gray-700">Economia anual projetada</span>
                   <span className="text-2xl font-bold text-[#00A878]">R$ 180.000</span>
                 </div>
                 <div className="flex justify-between items-center py-3">
-                  <span className="text-gray-600">ROI médio</span>
+                  <span className="text-gray-700">ROI médio</span>
                   <span className="text-2xl font-bold text-[#00A878]">320%</span>
                 </div>
               </div>
@@ -122,7 +122,7 @@ export default function EconomicImpactSection() {
             <div className="bg-gradient-to-br from-[#0066B3]/5 to-[#00A878]/5 rounded-2xl p-8 text-center">
               <p className="text-6xl font-bold text-[#0066B3] mb-2">4:1</p>
               <p className="text-xl text-gray-700 font-medium mb-4">Retorno sobre Investimento</p>
-              <p className="text-gray-600">
+              <p className="text-gray-700">
                 Para cada R$ 1 investido em SWB, hospitais economizam em média R$ 4 
                 em custos evitados.
               </p>

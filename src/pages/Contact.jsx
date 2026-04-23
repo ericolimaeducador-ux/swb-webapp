@@ -89,7 +89,7 @@ export default function Contact() {
                     </div>
                     <div className="flex-1">
                       <h3 className="font-bold text-gray-900 mb-1">{info.title}</h3>
-                      <p className="text-gray-600 mb-3">{info.value}</p>
+                      <p className="text-gray-700 mb-3">{info.value}</p>
                       <a 
                         href={info.action}
                         target="_blank"
@@ -141,10 +141,10 @@ export default function Contact() {
                   <Clock className="w-5 h-5 text-[#0066B3]" />
                   <h3 className="font-bold text-gray-900">Horário de Atendimento</h3>
                 </div>
-                <div className="space-y-2 text-gray-600">
+                <div className="space-y-2 text-gray-700">
                   <p>Segunda a Sexta: 8h às 18h</p>
                   <p>Sábado: 8h às 12h</p>
-                  <p className="text-sm text-gray-500 mt-4">
+                  <p className="text-sm text-gray-700 mt-4">
                     * Mensagens fora do horário serão respondidas no próximo dia útil
                   </p>
                 </div>
@@ -166,7 +166,7 @@ export default function Contact() {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center text-gray-600 ${social.color} hover:text-white transition-all`}
+                      className={`w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center text-gray-700 ${social.color} hover:text-white transition-all`}
                       title={social.label}
                     >
                       <social.icon className="w-5 h-5" />
@@ -186,7 +186,7 @@ export default function Contact() {
           >
             <div className="bg-white rounded-2xl shadow-lg p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-2">Envie uma Mensagem</h2>
-              <p className="text-gray-600 mb-8">
+              <p className="text-gray-700 mb-8">
                 Preencha o formulário abaixo e nossa equipe entrará em contato em até 24 horas úteis.
               </p>
               <ContactForm />
