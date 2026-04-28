@@ -35,7 +35,7 @@ export default function HeroSection() {
               <span className="block text-[#9AF2D6]">Mais controle assistencial.</span>
             </h1>
 
-            <p className="mb-8 max-w-2xl text-xl leading-relaxed text-white/78 md:text-2xl">
+            <p className="mb-8 max-w-2xl text-xl leading-relaxed text-white/95 md:text-2xl">
               Barreira física inteligente contra contaminação fecal. 
               <span className="font-semibold text-white"> Menos retrabalho. Mais eficiência assistencial. 
               Gestão inteligente de custos hospitalares.</span>
@@ -43,15 +43,15 @@ export default function HeroSection() {
 
             <div className="mb-10 grid max-w-2xl gap-3 sm:grid-cols-3">
               <div className="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-sm">
-                <p className="mb-1 text-sm font-semibold uppercase tracking-[0.18em] text-white/55">Foco</p>
+                <p className="mb-1 text-sm font-semibold uppercase tracking-[0.18em] text-white/80">Foco</p>
                 <p className="text-base font-semibold text-white">Proteção da região sacral</p>
               </div>
               <div className="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-sm">
-                <p className="mb-1 text-sm font-semibold uppercase tracking-[0.18em] text-white/55">Impacto</p>
+                <p className="mb-1 text-sm font-semibold uppercase tracking-[0.18em] text-white/80">Impacto</p>
                 <p className="text-base font-semibold text-white">Redução de retrabalho clínico</p>
               </div>
               <div className="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-sm">
-                <p className="mb-1 text-sm font-semibold uppercase tracking-[0.18em] text-white/55">Aplicação</p>
+                <p className="mb-1 text-sm font-semibold uppercase tracking-[0.18em] text-white/80">Aplicação</p>
                 <p className="text-base font-semibold text-white">Hospitais, ILPIs e home care</p>
               </div>
             </div>
