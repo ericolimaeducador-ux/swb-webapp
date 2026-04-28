@@ -35,19 +35,16 @@ export default function HeroSection() {
               <span className="block text-[#9AF2D6]">Mais controle assistencial.</span>
             </h1>
 
-<<<<<<< Updated upstream
             <p className="mb-8 max-w-2xl text-xl leading-relaxed text-white/95 md:text-2xl">
               Barreira física inteligente contra contaminação fecal. 
               <span className="font-semibold text-white"> Menos retrabalho. Mais eficiência assistencial. 
               Gestão inteligente de custos hospitalares.</span>
-=======
             <p className="mb-8 max-w-2xl text-xl leading-relaxed text-white md:text-2xl">
               Barreira física inteligente contra contaminação fecal.
               <span className="font-semibold text-white">
                 {' '}Menos retrabalho. Mais eficiência assistencial.
                 Gestão inteligente de custos hospitalares.
               </span>
->>>>>>> Stashed changes
             </p>
 
             <div className="mb-10 grid max-w-2xl gap-3 sm:grid-cols-3">
