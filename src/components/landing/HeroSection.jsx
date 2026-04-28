@@ -65,7 +65,7 @@ export default function HeroSection() {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
-              
+              <a
                 href="https://wa.me/5511947391805?text=Olá! Gostaria de falar com um especialista sobre o SWB."
                 target="_blank"
                 rel="noopener noreferrer">
