@@ -23,7 +23,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}>
-            
+
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 backdrop-blur-sm">
               <Sparkles className="h-4 w-4 text-[#7EF0C8]" />
               <Shield className="w-4 h-4 text-[#00A878]" />
@@ -36,8 +36,8 @@ export default function HeroSection() {
             </h1>
 
             <p className="mb-8 max-w-2xl text-xl leading-relaxed text-white/95 md:text-2xl">
-              Barreira física inteligente contra contaminação fecal. 
-              <span className="font-semibold text-white"> Menos retrabalho. Mais eficiência assistencial. 
+              Barreira física inteligente contra contaminação fecal.
+              <span className="font-semibold text-white"> Menos retrabalho. Mais eficiência assistencial.
               Gestão inteligente de custos hospitalares.</span>
             </p>
 
@@ -61,7 +61,6 @@ export default function HeroSection() {
                 <Button
                   size="lg"
                   className="rounded-full bg-[#00A878] px-8 py-6 text-lg font-semibold text-white shadow-lg shadow-[#00A878]/30 transition-all hover:scale-105 hover:bg-[#008f66]">
-                  
                   Solicitar Orçamento
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
@@ -70,12 +69,10 @@ export default function HeroSection() {
                 href="https://wa.me/5511947391805?text=Olá! Gostaria de falar com um especialista sobre o SWB."
                 target="_blank"
                 rel="noopener noreferrer">
-                
                 <Button
                   size="lg"
                   variant="outline"
                   className="rounded-full border-2 border-white bg-white/10 px-8 py-6 text-lg font-semibold text-white backdrop-blur-sm transition-all hover:scale-105 hover:bg-white hover:text-[#0066B3]">
-                  
                   <MessageCircle className="mr-2 w-5 h-5" />
                   Falar com Especialista
                 </Button>
@@ -92,6 +89,7 @@ export default function HeroSection() {
                 <span className="text-sm font-medium">Pensado para eficiência clínica e econômica</span>
               </div>
             </div>
+
           </motion.div>
 
           <motion.div
@@ -99,7 +97,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="hidden lg:block">
-            
+
             <div className="relative">
               <div className="absolute -inset-6 rounded-[36px] bg-gradient-to-br from-[#00A878]/30 via-[#0066B3]/20 to-transparent blur-3xl" />
               <div className="absolute -inset-1 rounded-[36px] border border-white/10 bg-white/5 backdrop-blur-sm" />
@@ -120,6 +118,7 @@ export default function HeroSection() {
                 </p>
               </div>
             </div>
+
           </motion.div>
         </div>
       </div>
@@ -130,6 +129,6 @@ export default function HeroSection() {
           <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white" />
         </svg>
       </div>
-    </section>);
-
+    </section>
+  );
 }
