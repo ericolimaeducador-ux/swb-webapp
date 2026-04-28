@@ -19,7 +19,6 @@ import ContactForm from '../components/shared/ContactForm';
 const specifications = [
 { label: 'Material', value: 'Espuma de poliuretano de alta qualidade' },
 { label: 'Formato', value: 'Anatômico para região sacral' },
-{ label: 'Adesivo', value: 'Hipoalergênico e suave à pele' },
 { label: 'Dimensões', value: '18cm x 20cm (padrão adulto)' },
 { label: 'Espessura', value: '5mm de proteção' },
 { label: 'Cor', value: 'Cinza grafite' },
