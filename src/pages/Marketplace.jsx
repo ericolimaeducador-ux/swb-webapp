@@ -206,6 +206,33 @@ export default function Marketplace() {
                   </div>
                 </div>
 
+                {/* Price */}
+                <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+                  <div className="grid sm:grid-cols-[0.95fr_1.05fr]">
+                    <div className="bg-gray-100">
+                      <img
+                        src="/SWB_BOX.jpeg"
+                        alt="Caixa SWB com 30 unidades"
+                        className="h-full min-h-64 w-full object-cover"
+                      />
+                    </div>
+                    <div className="p-6 flex flex-col justify-center">
+                      <Badge className="mb-4 w-fit bg-[#E9F6F1] text-[#006B4F] border-[#00A878]/20">
+                        Caixa com 30 unidades
+                      </Badge>
+                      <p className="text-sm font-semibold uppercase tracking-wide text-gray-500">
+                        Valor da caixa
+                      </p>
+                      <div className="mt-2 flex items-end gap-2">
+                        <span className="text-4xl font-bold text-gray-950">R$ 419,00</span>
+                      </div>
+                      <p className="mt-4 text-sm leading-6 text-gray-700">
+                        Embalagem fechada com 30 dispositivos SWB para uso profissional.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Specifications */}
                 <div className="bg-white rounded-2xl shadow-lg p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
