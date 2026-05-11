@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
-import { Shield, MessageCircle, ArrowRight, BadgeCheck, Activity, Sparkles } from 'lucide-react';
+import { Shield, MessageCircle, ArrowRight, BadgeCheck, Activity, Sparkles, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 
@@ -56,7 +56,7 @@ export default function HeroSection() {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
               <Link to={createPageUrl('Marketplace')}>
                 <Button
                   size="lg"
@@ -75,6 +75,18 @@ export default function HeroSection() {
                   className="rounded-full border-2 border-white bg-white/10 px-8 py-6 text-lg font-semibold text-white backdrop-blur-sm transition-all hover:scale-105 hover:bg-white hover:text-[#0066B3]">
                   <MessageCircle className="mr-2 w-5 h-5" />
                   Falar com Especialista
+                </Button>
+              </a>
+              <a
+                href="/arquivos/SWB_Instrucoes_de_uso.html"
+                target="_blank"
+                rel="noopener noreferrer">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="rounded-full border-2 border-white/70 bg-transparent px-8 py-6 text-lg font-semibold text-white transition-all hover:scale-105 hover:bg-white hover:text-[#0066B3]">
+                  <FileText className="mr-2 w-5 h-5" />
+                  Ver Modo de Uso
                 </Button>
               </a>
             </div>
@@ -114,7 +126,7 @@ export default function HeroSection() {
                 <p className="mb-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#9AF2D6]">Proposta de valor</p>
                 <p className="text-2xl font-bold text-white">Uma camada simples que reduz um problema caro.</p>
                 <p className="mt-2 text-sm leading-relaxed text-white/90">
-                  Produto pensado para integrar prevenção, operação e gestão com leitura rápida de benefício clínico.
+                  Produto pensado para integrar o tratamento clínico, operação e gestão com leitura rápida de benefício clínico.
                 </p>
               </div>
             </div>

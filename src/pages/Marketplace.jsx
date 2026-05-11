@@ -195,7 +195,7 @@ export default function Marketplace() {
                     desenvolvido para criar uma barreira física protetora na região sacral de 
                     pacientes incontinentes. Fabricado em espuma de poliuretano de alta qualidade, 
                     o SWB minimiza o contato direto de fezes com curativos e pele, contribuindo 
-                    para protocolos de prevenção de lesões por pressão e otimização do cuidado.
+                    para protocolos de manejo de feridas no ambiente hospitalar e otimização do cuidado.
                   </p>
 
                   <div className="flex items-center gap-3 p-4 bg-amber-50 rounded-xl border border-amber-100">

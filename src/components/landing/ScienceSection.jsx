@@ -49,8 +49,8 @@ export default function ScienceSection() {
               <span className="text-[#0066B3]"> Sólida</span>
             </h2>
             <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-              O SWB é fundamentado em evidências científicas consolidadas sobre prevenção 
-              de lesões cutâneas e manejo de pacientes incontinentes.
+              O SWB é fundamentado em evidências científicas consolidadas sobre a consequência
+              do rastreio fecal pela fenda interglútea e manejo de pacientes incontinentes.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-4 mb-8">

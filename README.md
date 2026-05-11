@@ -31,7 +31,6 @@ O **SWB** é um dispositivo de barreira física para a região sacral, projetado
 
 - Reduzir a contaminação fecal da região sacral  
 - Preservar curativos e coberturas  
-- Apoiar protocolos de prevenção de lesões por pressão  
 - Diminuir trocas não planejadas  
 - Reduzir retrabalho da equipe de enfermagem  
 - Favorecer uma rotina assistencial mais previsível  

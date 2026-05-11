@@ -23,8 +23,8 @@ const clinicalBenefits = [
   },
   {
     icon: Heart,
-    title: "Apoio à Prevenção de LPP",
-    description: "Contribui para protocolos de prevenção de lesões por pressão em pacientes de risco."
+    title: "Apoio ao Tratamento de LPP Sacral",
+    description: "Contribuindo para protocolos de manejo de feridas no ambiente hospitalar."
   },
   {
     icon: Thermometer,
@@ -171,7 +171,7 @@ export default function Benefits() {
       {/* Clinical Benefits */}
       <BenefitSection
         title="Benefícios Clínicos"
-        subtitle="Proteção e prevenção para o paciente"
+        subtitle="Proteção e prevenção de contaminações da lesão sacral"
         benefits={clinicalBenefits}
         color="blue"
         bgColor="bg-white"

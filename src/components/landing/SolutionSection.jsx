@@ -21,7 +21,7 @@ const features = [
   {
     icon: Heart,
     title: "Apoio aos Protocolos",
-    description: "Integra-se aos protocolos institucionais de prevenção de lesões por pressão."
+    description: "Integra-se aos protocolos institucionais de tratamento de lesões por pressão."
   }
 ];
 
