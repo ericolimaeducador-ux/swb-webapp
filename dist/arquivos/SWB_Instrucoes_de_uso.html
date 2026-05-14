@@ -208,6 +208,40 @@
   }
   .step-card h3 { margin-bottom: 10px; }
 
+  .usage-sequence {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin: 0 0 26px;
+  }
+  .usage-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, .06);
+  }
+  .usage-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+    background: #f8fafc;
+  }
+  .usage-caption {
+    padding: 14px 16px 16px;
+  }
+  .usage-caption strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--navy);
+  }
+  .usage-caption span {
+    color: var(--text-mid);
+    font-size: .92rem;
+    line-height: 1.45;
+  }
+
   /* ── DISPOSAL (page 13) ── */
   .disposal-flow { display: flex; flex-direction: column; gap: 16px; }
   .disposal-item {
@@ -262,9 +296,148 @@
   /* ── SECTION BG ALTERNATES ── */
   .bg-white { background: white; }
 
+  /* Visual alinhado ao site SWB */
+  body {
+    background: #f8fafc;
+    font-size: 16px;
+  }
+
+  .hero {
+    padding: 42px 20px 38px;
+    background:
+      radial-gradient(circle at top left, rgba(42, 191, 191, .18), transparent 28%),
+      linear-gradient(135deg, #0a3f72 0%, #062a4f 50%, #041729 100%);
+  }
+
+  .brand { margin-bottom: 16px; }
+  .brand-icon { width: 42px; height: 42px; }
+  .brand-name { font-size: 1.65rem; }
+  .brand-sub { font-size: .66rem; }
+
+  .hero-eyebrow {
+    margin-bottom: 8px;
+    font-size: .78rem;
+    letter-spacing: .18em;
+  }
+
+  .hero h1 {
+    max-width: 820px;
+    margin: 0 auto 14px;
+    font-size: clamp(1.85rem, 4vw, 3rem);
+  }
+
+  .hero p {
+    max-width: 720px;
+    font-size: 1rem;
+  }
+
+  section,
+  section.bg-white {
+    max-width: 1120px !important;
+    padding: 38px 24px !important;
+  }
+
+  section.bg-white > div { max-width: 1120px !important; }
+  section + section { border-top: 1px solid #e2e8f0; }
+
+  h2 {
+    margin-bottom: 20px;
+    font-size: clamp(1.35rem, 2.4vw, 2rem);
+  }
+
+  h3 { margin-bottom: 8px; }
+  p { margin-bottom: 10px; line-height: 1.55; }
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    gap: 16px;
+  }
+
+  .intro-layout,
+  .two-col {
+    gap: 28px;
+  }
+
+  .card,
+  .step-card,
+  .pillar,
+  .failure-card,
+  .incl-box,
+  .excl-box {
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, .05);
+  }
+
+  .card-icon {
+    width: 42px;
+    height: 42px;
+    margin-bottom: 12px;
+    font-size: 1.15rem;
+  }
+
+  .intro-desc {
+    padding-left: 18px;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .highlight { padding: 18px 20px; margin-top: 16px; }
+  .layer { gap: 14px; padding: 16px 18px; }
+  .eff-bar-wrap { margin: 16px 0 24px; }
+  .triagem-grid, .steps-grid { gap: 18px; }
+  .usage-sequence { gap: 16px; margin-bottom: 22px; }
+  .check-list, .cross-list { gap: 9px; }
+  .aviso-section { padding: 40px 24px; }
+  .aviso-badge { margin-bottom: 16px; }
+  .disposal-flow { gap: 12px; }
+  .disposal-item { gap: 16px; padding: 18px 20px; }
+  .specs-table td { padding: 13px 14px; }
+  .cta-section { padding: 44px 24px; }
+  .cta-section h2 { margin-bottom: 14px; }
+  .cta-section p { margin-bottom: 22px; }
+  .cta-list { gap: 9px; margin-bottom: 26px; }
+  .contact-grid { gap: 12px 28px; padding-top: 22px; }
+
   /* responsive */
   @media (max-width: 640px) {
     .two-col, .triagem-grid, .steps-grid, .intro-layout { grid-template-columns: 1fr; }
+    section,
+    section.bg-white {
+      padding: 30px 16px !important;
+    }
+    .hero {
+      padding: 34px 16px 30px;
+    }
+    .card,
+    .step-card,
+    .pillar,
+    .failure-card,
+    .incl-box,
+    .excl-box {
+      padding: 18px;
+    }
+    .layer {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    .usage-sequence {
+      grid-template-columns: 1fr;
+    }
+    .specs-table,
+    .specs-table tbody,
+    .specs-table tr,
+    .specs-table td {
+      display: block;
+      width: 100% !important;
+    }
+    .specs-table td:first-child {
+      padding-bottom: 4px;
+    }
+    .specs-table td:last-child {
+      padding-top: 0;
+    }
   }
 </style>
 </head>
@@ -497,6 +670,29 @@
 <!-- ══ PAGES 11-12: PROTOCOLO DE APLICAÇÃO ══ -->
 <section>
   <h2>Protocolo de Aplicação: <span>Preparação, Inserção e Finalização</span></h2>
+  <div class="usage-sequence" aria-label="Sequência visual de colocação do SWB">
+    <div class="usage-card">
+      <img src="/1.png" alt="Passo 1 da colocação do SWB">
+      <div class="usage-caption">
+        <strong>1. Preparar a região</strong>
+        <span>Com o paciente em decúbito lateral, higienizar e posicionar o SWB na direção da fenda interglútea.</span>
+      </div>
+    </div>
+    <div class="usage-card">
+      <img src="/2.png" alt="Passo 2 da colocação do SWB">
+      <div class="usage-caption">
+        <strong>2. Acomodar o dispositivo</strong>
+        <span>Introduzir suavemente o SWB sob o cóccix, mantendo a adaptação anatômica entre as nádegas.</span>
+      </div>
+    </div>
+    <div class="usage-card">
+      <img src="/3.png" alt="Passo 3 da colocação do SWB">
+      <div class="usage-caption">
+        <strong>3. Finalizar com a fralda</strong>
+        <span>Fechar a fralda por cima para gerar compressão leve, estabilidade e barreira contra o deslocamento fecal.</span>
+      </div>
+    </div>
+  </div>
   <div class="steps-grid">
     <div class="step-card">
       <div class="step-num">1</div>
@@ -559,7 +755,7 @@
     <div class="pillar">
       <div class="pillar-icon">🛡️</div>
       <h3>Pilar 1: Proteção Cutânea e Lesional (Foco Clínico)</h3>
-      <p>Prevenção direta de DAI e proteção absoluta de curativos sacrais complexos. Preservação da cicatrização.</p>
+      <p>Prevenção direta da contaminação por fezes em curativos sacrais complexos. Preservação da cicatrização.</p>
     </div>
     <div class="pillar">
       <div class="pillar-icon">⚙️</div>
