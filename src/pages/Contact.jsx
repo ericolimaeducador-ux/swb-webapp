@@ -59,7 +59,7 @@ export default function Contact() {
             </h1>
             <p className="text-xl text-white/80">
               Estamos prontos para atender sua instituição e apresentar como o SWB 
-              pode transformar o cuidado ao paciente incontinente.
+              pode apoiar a rotina de cuidado ao paciente incontinente.
             </p>
           </motion.div>
         </div>

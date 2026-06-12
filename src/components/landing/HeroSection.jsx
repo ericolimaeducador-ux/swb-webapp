@@ -48,7 +48,7 @@ export default function HeroSection() {
               </div>
               <div className="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-sm">
                 <p className="mb-1 text-sm font-semibold uppercase tracking-[0.18em] text-white/80">Impacto</p>
-                <p className="text-base font-semibold text-white">Redução de retrabalho clínico</p>
+                <p className="text-base font-semibold text-white">Organização do retrabalho assistencial</p>
               </div>
               <div className="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-sm">
                 <p className="mb-1 text-sm font-semibold uppercase tracking-[0.18em] text-white/80">Aplicação</p>
@@ -98,7 +98,7 @@ export default function HeroSection() {
               </div>
               <div className="flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-sm">
                 <Activity className="h-5 w-5 text-[#7EF0C8]" />
-                <span className="text-sm font-medium">Pensado para eficiência clínica e econômica</span>
+                <span className="text-sm font-medium">Pensado para eficiência assistencial e operacional</span>
               </div>
             </div>
 
@@ -126,7 +126,7 @@ export default function HeroSection() {
                 <p className="mb-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#9AF2D6]">Proposta de valor</p>
                 <p className="text-2xl font-bold text-white">Uma camada simples que reduz um problema caro.</p>
                 <p className="mt-2 text-sm leading-relaxed text-white/90">
-                  Produto pensado para integrar o tratamento clínico, operação e gestão com leitura rápida de benefício clínico.
+                  Produto pensado para integrar higiene, operação e gestão com leitura rápida de benefício assistencial.
                 </p>
               </div>
             </div>

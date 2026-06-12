@@ -13,7 +13,7 @@ const audiences = [
     icon: Home,
     title: "ILPIs",
     description: "Instituições de Longa Permanência para Idosos com residentes acamados.",
-    features: ["Cuidado contínuo", "Equipe reduzida", "Prevenção prioritária"]
+    features: ["Cuidado contínuo", "Equipe reduzida", "Rotina padronizada"]
   },
   {
     icon: Stethoscope,

@@ -211,8 +211,8 @@ export default function Layout({ children, currentPageName }) {
                 />
               </div>
               <p className="text-gray-400 mb-6 leading-relaxed">
-                Sistema de Proteção para Região Sacral. Tecnologia inovadora 
-                para prevenção de contaminação fecal em pacientes incontinentes.
+                Sistema de Proteção para Região Sacral. Tecnologia de barreira 
+                para reduzir contato fecal com curativos sacrais em pacientes incontinentes.
               </p>
               <div className="flex gap-3">
                 {socialLinks.map((social, index) => (

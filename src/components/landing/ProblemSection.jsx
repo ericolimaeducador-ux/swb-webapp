@@ -29,8 +29,8 @@ const problems = [
   },
   {
     icon: Activity,
-    title: "Risco de Lesão por Pressão",
-    description: "Umidade e contaminação comprometem o microclima cutâneo, aumentando vulnerabilidade a lesões.",
+    title: "Instabilidade do Cuidado Sacral",
+    description: "Umidade e contaminação tornam a rotina de higiene, curativos e reposicionamento mais trabalhosa.",
     color: "from-red-600 to-red-700"
   }
 ];

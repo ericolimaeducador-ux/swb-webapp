@@ -15,13 +15,13 @@ const features = [
   },
   {
     icon: Clock,
-    title: "Ação Preventiva",
-    description: "Atua antes que a contaminação ocorra, evitando a cascata de complicações subsequentes."
+    title: "Barreira Antecipada",
+    description: "É posicionado antes dos episódios de contaminação para reduzir o contato fecal com a área protegida."
   },
   {
     icon: Heart,
     title: "Apoio aos Protocolos",
-    description: "Integra-se aos protocolos institucionais de tratamento de lesões por pressão."
+    description: "Integra-se às rotinas institucionais de higiene, troca de fraldas e manejo de curativos sacrais."
   }
 ];
 

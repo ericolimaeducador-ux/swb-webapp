@@ -55,8 +55,8 @@ export default function EconomicImpactSection() {
             <span className="text-[#00A878]"> Custos Hospitalares</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Cada contaminação evitada representa economia real. O SWB é uma ferramenta 
-            de gestão financeira tanto quanto clínica.
+            Cada troca não planejada representa consumo de materiais, tempo assistencial e descarte. 
+            O SWB ajuda instituições a organizar esse indicador operacional.
           </p>
         </motion.div>
 
@@ -101,8 +101,8 @@ export default function EconomicImpactSection() {
                 <h3 className="text-2xl font-bold text-gray-900">Simulação de Economia</h3>
               </div>
               <p className="text-gray-700 mb-6 leading-relaxed">
-                Para um hospital com 100 leitos e média de 30% de pacientes incontinentes, 
-                a prevenção de apenas 50% das contaminações pode representar economia significativa.
+                Para um hospital com pacientes incontinentes, o registro de contaminações e trocas 
+                não planejadas permite estimar consumo de materiais, tempo assistencial e custo mensal.
               </p>
               <div className="space-y-3">
                 <div className="flex justify-between items-center py-3 border-b border-gray-100">
@@ -121,10 +121,10 @@ export default function EconomicImpactSection() {
             </div>
             <div className="bg-gradient-to-br from-[#0066B3]/5 to-[#00A878]/5 rounded-2xl p-8 text-center">
               <p className="text-6xl font-bold text-[#0066B3] mb-2">4:1</p>
-              <p className="text-xl text-gray-700 font-medium mb-4">Retorno sobre Investimento</p>
+              <p className="text-xl text-gray-700 font-medium mb-4">Indicador Operacional</p>
               <p className="text-gray-700">
-                Para cada R$ 1 investido em SWB, hospitais economizam em média R$ 4 
-                em custos evitados.
+                Acompanhe a relação entre episódios de contaminação, trocas de curativo e consumo 
+                diário de dispositivos.
               </p>
             </div>
           </div>

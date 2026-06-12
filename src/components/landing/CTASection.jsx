@@ -28,8 +28,8 @@ export default function CTASection() {
           </div>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            Prevenção Estratégica
-            <span className="block text-[#00A878]">Começa Agora</span>
+            Proteção Assistencial
+            <span className="block text-[#00A878]">Para a Rotina Sacral</span>
           </h2>
 
           <p className="text-xl text-white/80 mb-12 leading-relaxed max-w-2xl mx-auto">

@@ -23,8 +23,8 @@ const clinicalBenefits = [
   },
   {
     icon: Heart,
-    title: "Apoio ao Tratamento de LPP Sacral",
-    description: "Contribuindo para protocolos de manejo de feridas no ambiente hospitalar."
+    title: "Apoio ao Manejo Sacral",
+    description: "Contribui para rotinas de higiene e proteção de curativos no ambiente hospitalar."
   },
   {
     icon: Thermometer,
@@ -69,13 +69,13 @@ const economicBenefits = [
   },
   {
     icon: BarChart3,
-    title: "Custo-Efetividade",
-    description: "Retorno sobre investimento comprovado em múltiplas instituições."
+    title: "Modelagem de Custos",
+    description: "Permite estimar cenários de consumo, retrabalho e custo por troca adicional."
   },
   {
     icon: TrendingDown,
-    title: "Redução de Internação",
-    description: "Menor risco de complicações que poderiam prolongar tempo de internação."
+    title: "Gestão Operacional",
+    description: "Ajuda a mapear eventos de contaminação que impactam a rotina assistencial."
   }
 ];
 
@@ -171,7 +171,7 @@ export default function Benefits() {
       {/* Clinical Benefits */}
       <BenefitSection
         title="Benefícios Clínicos"
-        subtitle="Proteção e prevenção de contaminações da lesão sacral"
+        subtitle="Proteção de curativos sacrais contra contato fecal"
         benefits={clinicalBenefits}
         color="blue"
         bgColor="bg-white"
@@ -200,10 +200,10 @@ export default function Benefits() {
         <div className="container mx-auto px-6 lg:px-12">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             {[
-              { value: '60%', label: 'Redução de contaminação' },
-              { value: '40%', label: 'Menos trocas de curativo' },
-              { value: '2h', label: 'Economia por turno' },
-              { value: '320%', label: 'ROI médio' }
+              { value: '30', label: 'unidades por caixa' },
+              { value: '6-8h', label: 'intervalo de troca orientativo' },
+              { value: '1', label: 'uso único' },
+              { value: 'Classe I', label: 'dispositivo médico' }
             ].map((stat, index) => (
               <motion.div
                 key={index}

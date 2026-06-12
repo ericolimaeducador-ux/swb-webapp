@@ -13,8 +13,8 @@ const topics = [
   },
   {
     icon: FileText,
-    title: "Lesões por Pressão",
-    description: "Fisiopatologia, fatores de risco e estratégias de prevenção."
+    title: "Curativos Sacrais",
+    description: "Fatores que interferem na adesão, troca e proteção do curativo."
   },
   {
     icon: BookOpen,
@@ -23,8 +23,8 @@ const topics = [
   },
   {
     icon: GraduationCap,
-    title: "Dermatite Associada",
-    description: "DAI e seus mecanismos de lesão tissular."
+    title: "Higiene e Barreiras",
+    description: "Boas práticas para reduzir exposição do curativo a contaminantes."
   }
 ];
 
@@ -95,10 +95,10 @@ export default function ScienceSection() {
             <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 border border-gray-200">
               <div className="space-y-4">
                 {[
-                  "NPUAP/EPUAP Guidelines 2019",
-                  "WOUND CARE - Journal of Clinical Nursing",
-                   "DAI Best Practice Principles - WCET",
-                  "Cochrane Review - Pressure Ulcer Prevention"
+                  "Wound dressing performance literature",
+                  "Incontinence care and hygiene literature",
+                  "Fecal contamination and dressing failure studies",
+                  "Health economics and nursing workload references"
                 ].map((ref, index) => (
                   <div 
                     key={index}
