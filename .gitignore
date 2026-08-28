@@ -26,3 +26,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Evita commit acidental de PDFs soltos na raiz da pasta publica do site
+# (documentos pessoais). PDFs legitimos em subpastas, ex.: public/arquivos/, nao sao afetados.
+public/*.pdf
