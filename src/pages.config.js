@@ -52,6 +52,8 @@ import BaseCientifica from './pages/BaseCientifica';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
 import Marketplace from './pages/Marketplace';
+import PoliticaPrivacidade from './pages/PoliticaPrivacidade';
+import TermosDeUso from './pages/TermosDeUso';
 import __Layout from './Layout.jsx';
 
 
@@ -61,6 +63,8 @@ export const PAGES = {
     "Contact": Contact,
     "Home": Home,
     "Marketplace": Marketplace,
+    "PoliticaPrivacidade": PoliticaPrivacidade,
+    "TermosDeUso": TermosDeUso,
 }
 
 export const pagesConfig = {

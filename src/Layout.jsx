@@ -295,8 +295,8 @@ export default function Layout({ children, currentPageName }) {
             <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-gray-400 text-sm">
               <p>© 2026 SWB - Sistema de Proteção Sacral. Todos os direitos reservados.</p>
               <div className="flex gap-6">
-                <a href="#" className="hover:text-white transition-colors">Política de Privacidade</a>
-                <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
+                <Link to={createPageUrl('PoliticaPrivacidade')} className="hover:text-white transition-colors">Política de Privacidade</Link>
+                <Link to={createPageUrl('TermosDeUso')} className="hover:text-white transition-colors">Termos de Uso</Link>
               </div>
             </div>
           </div>
