@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import {
   Shield, Package, Ruler, FileText, CheckCircle,
-  MessageCircle, ArrowRight, Info } from
+  MessageCircle, ArrowRight, Info, BookOpen } from
 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -289,15 +289,20 @@ export default function Marketplace() {
                     <FileText className="w-5 h-5 text-[#0066B3]" />
                     Instruções de Uso
                   </h3>
-                  <p className="text-gray-700 mb-4">
-                    Clique na imagem abaixo para acessar as instruções completas de uso do SWB.
-                  </p>
-                  <a href="/arquivos/SWB_Instrucoes_de_uso.html" target="_blank" rel="noopener noreferrer">
-                    <img
-                      src="/logoswb.jpg"
-                      alt="Instruções de Uso do SWB"
-                      className="w-full max-w-sm mx-auto rounded-xl shadow-md hover:shadow-lg transition-shadow cursor-pointer"
-                    />
+                  <a
+                    href="/arquivos/SWB_Instrucoes_de_uso.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-4 rounded-xl border border-gray-200 p-4 shadow-md hover:shadow-lg hover:border-[#0066B3]/40 transition-all cursor-pointer"
+                  >
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-[#0066B3]/10">
+                      <BookOpen className="w-6 h-6 text-[#0066B3]" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="font-semibold text-gray-900">Instruções de Uso</p>
+                      <p className="text-sm text-gray-600">Veja como aplicar o dispositivo corretamente</p>
+                    </div>
+                    <ArrowRight className="w-5 h-5 flex-shrink-0 text-gray-400 transition-all group-hover:translate-x-0.5 group-hover:text-[#0066B3]" />
                   </a>
                 </div>
 
