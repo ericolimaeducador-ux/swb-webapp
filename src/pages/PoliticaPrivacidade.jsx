@@ -16,7 +16,7 @@ export default function PoliticaPrivacidade() {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Política de Privacidade | SWB Brasil" />
         <meta property="og:description" content="Como o SWB Brasil coleta, usa e protege os dados pessoais informados no site, em conformidade com a LGPD (Lei nº 13.709/2018)." />
-        <meta property="og:image" content="https://swbbrasil.com.br/SWBFOTOMARKETING.png" />
+        <meta property="og:image" content="https://swbbrasil.com.br/og-image.png" />
       </Helmet>
       {/* Hero */}
       <section className="relative py-20 bg-gradient-to-br from-[#0066B3] via-[#004080] to-[#002855] overflow-hidden">

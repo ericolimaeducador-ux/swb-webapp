@@ -48,7 +48,7 @@ export default function Contact() {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Fale Conosco | SWB Brasil" />
         <meta property="og:description" content="Entre em contato com a equipe SWB Brasil para conhecer o sistema de proteção sacral, tirar dúvidas e solicitar propostas para hospitais, ILPIs, clínicas e home care." />
-        <meta property="og:image" content="https://swbbrasil.com.br/SWBFOTOMARKETING.png" />
+        <meta property="og:image" content="https://swbbrasil.com.br/og-image.png" />
       </Helmet>
       {/* Hero */}
       <section className="relative py-20 bg-gradient-to-br from-[#0066B3] via-[#004080] to-[#002855] overflow-hidden">

@@ -16,7 +16,7 @@ export default function TermosDeUso() {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Termos de Uso | SWB Brasil" />
         <meta property="og:description" content="Condições de navegação e uso do site institucional do SWB Brasil: propriedade intelectual, conteúdo informativo e limitações de responsabilidade." />
-        <meta property="og:image" content="https://swbbrasil.com.br/SWBFOTOMARKETING.png" />
+        <meta property="og:image" content="https://swbbrasil.com.br/og-image.png" />
       </Helmet>
       {/* Hero */}
       <section className="relative py-20 bg-gradient-to-br from-[#0066B3] via-[#004080] to-[#002855] overflow-hidden">

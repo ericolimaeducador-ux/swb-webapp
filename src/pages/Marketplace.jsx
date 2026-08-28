@@ -73,7 +73,7 @@ export default function Marketplace() {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Produto SWB — Sistema de Proteção Sacral | SWB Brasil" />
         <meta property="og:description" content="Conheça o dispositivo SWB, barreira para proteção da região sacral. Notificação ANVISA nº 80220130014, Dispositivo Médico Classe I. Solicite uma proposta." />
-        <meta property="og:image" content="https://swbbrasil.com.br/SWBFOTOMARKETING.png" />
+        <meta property="og:image" content="https://swbbrasil.com.br/og-image.png" />
       </Helmet>
       {/* Hero */}
       <section className="relative py-16 bg-gradient-to-br from-[#0066B3] via-[#004080] to-[#002855] overflow-hidden">

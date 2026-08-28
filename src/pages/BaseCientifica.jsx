@@ -63,7 +63,7 @@ export default function BaseCientifica() {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Base Científica e Evidências | SWB Brasil" />
         <meta property="og:description" content="Artigos, revisões e estudos sobre contaminação fecal de curativos sacrais, higiene de feridas e o racional científico por trás do Sistema de Proteção SWB." />
-        <meta property="og:image" content="https://swbbrasil.com.br/SWBFOTOMARKETING.png" />
+        <meta property="og:image" content="https://swbbrasil.com.br/og-image.png" />
       </Helmet>
       <section className="pt-16 pb-12 bg-gradient-to-br from-[#0066B3] to-[#004080]">
         <div className="container mx-auto px-6 lg:px-12">
