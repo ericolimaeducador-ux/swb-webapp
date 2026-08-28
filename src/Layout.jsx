@@ -204,9 +204,9 @@ export default function Layout({ children, currentPageName }) {
             {/* Brand */}
             <div className="lg:col-span-1">
               <div className="mb-6">
-                <img 
-                  src="/logoswb.jpg" 
-                  alt="SWB - Sacral Protection" 
+                <img
+                  src="/swblogocontrastado.png"
+                  alt="SWB - Sacral Protection"
                   className="h-14 w-auto"
                 />
               </div>
