@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
@@ -9,6 +10,14 @@ import { FileText, Mail } from 'lucide-react';
 export default function TermosDeUso() {
   return (
     <div className="min-h-screen bg-gray-50">
+      <Helmet>
+        <title>Termos de Uso | SWB Brasil</title>
+        <meta name="description" content="Condições de navegação e uso do site institucional do SWB Brasil: propriedade intelectual, conteúdo informativo e limitações de responsabilidade." />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Termos de Uso | SWB Brasil" />
+        <meta property="og:description" content="Condições de navegação e uso do site institucional do SWB Brasil: propriedade intelectual, conteúdo informativo e limitações de responsabilidade." />
+        <meta property="og:image" content="https://swbbrasil.com.br/SWBFOTOMARKETING.png" />
+      </Helmet>
       {/* Hero */}
       <section className="relative py-20 bg-gradient-to-br from-[#0066B3] via-[#004080] to-[#002855] overflow-hidden">
         <div className="absolute inset-0">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
@@ -133,6 +134,14 @@ function BenefitSection({ title, subtitle, benefits, color, bgColor }) {
 export default function Benefits() {
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Benefícios Clínicos e Operacionais | SWB Brasil</title>
+        <meta name="description" content="Proteção da região sacral, menos contaminação de curativos, redução de trocas e retrabalho de enfermagem e impacto econômico para a instituição." />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Benefícios Clínicos e Operacionais | SWB Brasil" />
+        <meta property="og:description" content="Proteção da região sacral, menos contaminação de curativos, redução de trocas e retrabalho de enfermagem e impacto econômico para a instituição." />
+        <meta property="og:image" content="https://swbbrasil.com.br/SWBFOTOMARKETING.png" />
+      </Helmet>
       {/* Hero */}
       <section className="relative py-24 bg-gradient-to-br from-[#0066B3] via-[#004080] to-[#002855] overflow-hidden">
         <div className="absolute inset-0">

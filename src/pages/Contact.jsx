@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { 
   MessageCircle, Mail, Phone, MapPin, 
@@ -41,6 +42,14 @@ const contactInfo = [
 export default function Contact() {
   return (
     <div className="min-h-screen bg-gray-50">
+      <Helmet>
+        <title>Fale Conosco | SWB Brasil</title>
+        <meta name="description" content="Entre em contato com a equipe SWB Brasil para conhecer o sistema de proteção sacral, tirar dúvidas e solicitar propostas para hospitais, ILPIs, clínicas e home care." />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Fale Conosco | SWB Brasil" />
+        <meta property="og:description" content="Entre em contato com a equipe SWB Brasil para conhecer o sistema de proteção sacral, tirar dúvidas e solicitar propostas para hospitais, ILPIs, clínicas e home care." />
+        <meta property="og:image" content="https://swbbrasil.com.br/SWBFOTOMARKETING.png" />
+      </Helmet>
       {/* Hero */}
       <section className="relative py-20 bg-gradient-to-br from-[#0066B3] via-[#004080] to-[#002855] overflow-hidden">
         <div className="absolute inset-0">

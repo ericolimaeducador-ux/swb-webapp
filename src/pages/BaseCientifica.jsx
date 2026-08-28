@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, ExternalLink, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
@@ -56,6 +57,14 @@ const articles = Object.entries(artigoModules)
 export default function BaseCientifica() {
   return (
     <div className="min-h-screen bg-slate-50">
+      <Helmet>
+        <title>Base Científica e Evidências | SWB Brasil</title>
+        <meta name="description" content="Artigos, revisões e estudos sobre contaminação fecal de curativos sacrais, higiene de feridas e o racional científico por trás do Sistema de Proteção SWB." />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Base Científica e Evidências | SWB Brasil" />
+        <meta property="og:description" content="Artigos, revisões e estudos sobre contaminação fecal de curativos sacrais, higiene de feridas e o racional científico por trás do Sistema de Proteção SWB." />
+        <meta property="og:image" content="https://swbbrasil.com.br/SWBFOTOMARKETING.png" />
+      </Helmet>
       <section className="pt-16 pb-12 bg-gradient-to-br from-[#0066B3] to-[#004080]">
         <div className="container mx-auto px-6 lg:px-12">
           <Link to={createPageUrl('Home')}>
