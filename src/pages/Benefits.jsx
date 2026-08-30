@@ -20,7 +20,7 @@ const clinicalBenefits = [
   {
     icon: Droplets,
     title: "Redução de Contaminação",
-    description: "Diminui significativamente a exposição da área sacral a agentes contaminantes."
+    description: "Reduz a exposição da área sacral a agentes contaminantes."
   },
   {
     icon: Heart,
@@ -157,7 +157,7 @@ export default function Benefits() {
             className="text-center max-w-4xl mx-auto"
           >
             <span className="inline-block bg-white/10 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm">
-              Benefícios Comprovados
+              Benefícios Clínicos, Operacionais e Econômicos
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Impacto Real em
