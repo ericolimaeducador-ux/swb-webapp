@@ -36,9 +36,9 @@ const features = [
 'Descartável após uso'];
 
 const productImages = [
-  { src: '/1.png', alt: 'SWB - Produto imagem 1' },
-  { src: '/2.png', alt: 'SWB - Produto imagem 2' },
-  { src: '/3.png', alt: 'SWB - Produto imagem 3' }
+  { src: '/1.png', webp: '/1.webp', alt: 'SWB - Produto imagem 1' },
+  { src: '/2.png', webp: '/2.webp', alt: 'SWB - Produto imagem 2' },
+  { src: '/3.png', webp: '/3.webp', alt: 'SWB - Produto imagem 3' }
 ];
 
 
@@ -130,14 +130,18 @@ export default function Marketplace() {
                 className="w-full max-w-xl mx-auto"
               >
                 <CarouselContent>
-                  {productImages.map((image) => (
+                  {productImages.map((image, index) => (
                     <CarouselItem key={image.src}>
                       <div className="flex justify-center">
-                        <img
-                          src={image.src}
-                          alt={image.alt}
-                          className="w-[65%] h-auto rounded-2xl"
-                        />
+                        <picture>
+                          <source srcSet={image.webp} type="image/webp" />
+                          <img
+                            src={image.src}
+                            alt={image.alt}
+                            loading={index === 0 ? 'eager' : 'lazy'}
+                            className="w-[65%] h-auto rounded-2xl"
+                          />
+                        </picture>
                       </div>
                     </CarouselItem>
                   ))}
@@ -219,11 +223,15 @@ export default function Marketplace() {
                 <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
                   <div className="grid sm:grid-cols-[0.95fr_1.05fr]">
                     <div className="bg-gray-100">
-                      <img
-                        src="/SWB_BOX.jpeg"
-                        alt="Caixa SWB com 30 unidades"
-                        className="h-full min-h-64 w-full object-cover"
-                      />
+                      <picture>
+                        <source srcSet="/SWB_BOX.webp" type="image/webp" />
+                        <img
+                          src="/SWB_BOX.jpeg"
+                          alt="Caixa SWB com 30 unidades"
+                          loading="lazy"
+                          className="h-full min-h-64 w-full object-cover"
+                        />
+                      </picture>
                     </div>
                     <div className="p-6 flex flex-col justify-center">
                       <Badge className="mb-4 w-fit bg-[#E9F6F1] text-[#006B4F] border-[#00A878]/20">
