@@ -207,7 +207,7 @@ export default function Layout({ children, currentPageName }) {
                 <img
                   src="/swblogocontrastado.png"
                   alt="SWB - Sacral Protection"
-                  className="h-14 w-auto"
+                  className="h-16 w-auto md:h-20"
                 />
               </div>
               <p className="text-gray-400 mb-6 leading-relaxed">
