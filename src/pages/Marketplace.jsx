@@ -25,7 +25,7 @@ const specifications = [
 { label: 'Espessura', value: '5mm de proteção' },
 { label: 'Cor', value: 'Cinza grafite' },
 { label: 'Embalagem', value: 'Individual, não estéril' },
-{ label: 'Validade', value: '3 anos (fechado)' }];
+{ label: 'Validade', value: '12 meses (fechado)' }];
 
 
 const features = [
