@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
+import { getWhatsAppLink } from '@/lib/config';
 import { Shield, MessageCircle, ArrowRight, BadgeCheck, Activity, Sparkles, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
@@ -66,7 +67,7 @@ export default function HeroSection() {
                 </Button>
               </Link>
               <a
-                href="https://wa.me/5511947391805?text=Olá! Gostaria de falar com um especialista sobre o SWB."
+                href={getWhatsAppLink('Olá! Gostaria de falar com um especialista sobre o SWB.')}
                 target="_blank"
                 rel="noopener noreferrer">
                 <Button

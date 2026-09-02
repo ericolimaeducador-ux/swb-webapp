@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ContactForm from '../components/shared/ContactForm';
+import { WHATSAPP_NUMBER, WHATSAPP_DISPLAY, getWhatsAppLink } from '@/lib/config';
 
 const socialLinks = [
   { icon: Instagram, label: 'Instagram', url: 'https://www.instagram.com/swbbrasil', color: 'hover:bg-pink-500' },
@@ -19,8 +20,8 @@ const contactInfo = [
   { 
     icon: MessageCircle, 
     title: 'WhatsApp', 
-    value: '+55 11 947391805',
-    action: 'https://wa.me/5511947391805',
+    value: WHATSAPP_DISPLAY,
+    action: getWhatsAppLink(),
     actionLabel: 'Iniciar conversa'
   },
   { 
@@ -33,8 +34,8 @@ const contactInfo = [
   { 
     icon: Phone, 
     title: 'Telefone', 
-    value: '+55 11 947391805',
-    action: 'tel:+5511947391805',
+    value: WHATSAPP_DISPLAY,
+    action: `tel:+${WHATSAPP_NUMBER}`,
     actionLabel: 'Ligar agora'
   }
 ];
@@ -120,8 +121,8 @@ export default function Contact() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <a 
-                href="https://wa.me/5511947391805?text=Olá! Gostaria de saber mais sobre o SWB."
+              <a
+                href={getWhatsAppLink('Olá! Gostaria de saber mais sobre o SWB.')}
                 target="_blank"
                 rel="noopener noreferrer"
               >

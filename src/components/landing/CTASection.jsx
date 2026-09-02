@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
+import { getWhatsAppLink } from '@/lib/config';
 import { motion } from 'framer-motion';
 import { Shield, ArrowRight, MessageCircle, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -47,8 +48,8 @@ export default function CTASection() {
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
-            <a 
-              href="https://wa.me/5511947391805?text=Olá! Gostaria de saber mais sobre o SWB."
+            <a
+              href={getWhatsAppLink('Olá! Gostaria de saber mais sobre o SWB.')}
               target="_blank"
               rel="noopener noreferrer"
             >

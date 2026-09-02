@@ -7,6 +7,7 @@ import {
 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { getWhatsAppLink } from '@/lib/config';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
   Carousel,
@@ -317,7 +318,7 @@ export default function Marketplace() {
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
-                    href="https://wa.me/5511947391805?text=Olá! Gostaria de solicitar um orçamento do SWB."
+                    href={getWhatsAppLink('Olá! Gostaria de solicitar um orçamento do SWB.')}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1">

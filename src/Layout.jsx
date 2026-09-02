@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
-import { 
-  Menu, X, ChevronRight, 
+import { WHATSAPP_DISPLAY, getWhatsAppLink } from '@/lib/config';
+import {
+  Menu, X, ChevronRight,
   Instagram, Youtube, Music2,
   Mail, Phone, MapPin, ArrowRight, Stethoscope
 } from 'lucide-react';
@@ -95,8 +96,8 @@ export default function Layout({ children, currentPageName }) {
               <div className={`rounded-full px-4 py-2 text-xs font-semibold ${topBadgeSurface}`}>
                 Solução para hospitais, ILPIs e home care
               </div>
-              <a 
-                href="https://wa.me/5511947391805?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20SWB."
+              <a
+                href={getWhatsAppLink('Olá! Gostaria de saber mais sobre o SWB.')}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -143,8 +144,8 @@ export default function Layout({ children, currentPageName }) {
                   <div className="rounded-2xl bg-slate-50 p-4 text-sm text-slate-700">
                     Atendimento consultivo para instituições e equipes de enfermagem.
                   </div>
-                  <a 
-                    href="https://wa.me/5511947391805"
+                  <a
+                    href={getWhatsAppLink()}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -184,7 +185,7 @@ export default function Layout({ children, currentPageName }) {
             </div>
             <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
               <a
-                href="https://wa.me/5511947391805?text=Ol%C3%A1!%20Quero%20entender%20como%20o%20SWB%20se%20encaixa%20na%20minha%20institui%C3%A7%C3%A3o."
+                href={getWhatsAppLink('Olá! Quero entender como o SWB se encaixa na minha instituição.')}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -266,7 +267,7 @@ export default function Layout({ children, currentPageName }) {
                 <li className="flex items-start gap-3">
                   <Phone className="w-5 h-5 text-[#00A878] mt-0.5" />
                   <div>
-                    <p className="text-white">+55 11 947391805</p>
+                    <p className="text-white">{WHATSAPP_DISPLAY}</p>
                     <p className="text-gray-400 text-sm">WhatsApp</p>
                   </div>
                 </li>
