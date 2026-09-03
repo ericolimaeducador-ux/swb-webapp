@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contaminação Fecal em Lesões por Pressão Sacral — SWB Evidence Hub</title>
+<style>
+  :root{
+    --bg:#f4f6f8;
+    --surface:#ffffff;
+    --ink:#1a2b3c;
+    --ink-soft:#42566a;
+    --ink-faint:#6b7d8f;
+    --brand:#0e5a8a;
+    --brand-dark:#0a4368;
+    --brand-soft:#e8f1f7;
+    --accent:#12a19a;
+    --line:#e2e8ee;
+    --line-soft:#eef2f6;
+    --callout-bg:#eef6fb;
+    --callout-border:#0e5a8a;
+    --amber-bg:#fff6e4;
+    --amber-border:#f0d38b;
+    --amber-ink:#8a5a00;
+    --shadow:0 1px 3px rgba(16,40,60,.06),0 8px 28px rgba(16,40,60,.05);
+    --radius:14px;
+    --maxw:820px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:17px;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  .topbar{
+    background:var(--brand-dark);
+    color:#fff;
+    padding:13px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-size:14px;
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .topbar .hub{font-weight:600;letter-spacing:.3px;display:flex;align-items:center;gap:9px;}
+  .topbar .hub::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--accent);display:inline-block;}
+  .topbar a{color:#cfe3f0;text-decoration:none;transition:color .2s;}
+  .topbar a:hover{color:#fff;}
+
+  .hero{
+    background:linear-gradient(160deg,#0e5a8a 0%,#0a4368 100%);
+    color:#fff;
+    padding:34px 24px 60px;
+  }
+  .hero-inner{max-width:var(--maxw);margin:0 auto;}
+  .logo-row{margin-bottom:22px;}
+  .logo-row img{height:40px;width:auto;display:block;}
+  .crumbs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px;}
+  .crumbs span{
+    background:rgba(255,255,255,.13);
+    border:1px solid rgba(255,255,255,.2);
+    padding:5px 13px;border-radius:30px;
+    font-size:12.5px;font-weight:500;letter-spacing:.2px;
+  }
+  .hero h1{font-size:30px;line-height:1.28;margin:0 0 20px;font-weight:700;letter-spacing:-.3px;}
+  .hero .lede{font-size:17px;line-height:1.7;color:#d8e8f3;margin:0 0 30px;font-weight:400;}
+  .hero .meta{
+    display:flex;flex-wrap:wrap;gap:22px;font-size:14px;color:#bcd6e8;
+    padding-top:22px;border-top:1px solid rgba(255,255,255,.18);
+  }
+  .hero .meta span{display:flex;align-items:center;gap:7px;}
+
+  .wrap{max-width:var(--maxw);margin:-34px auto 0;padding:0 24px 80px;}
+  .card{
+    background:var(--surface);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:48px 52px;
+    border:1px solid var(--line);
+  }
+
+  .abstract{
+    background:var(--brand-soft);
+    border-radius:10px;
+    padding:24px 26px;
+    margin:0 0 38px;
+    border:1px solid #d4e6f1;
+  }
+  .abstract h3{margin:0 0 10px;font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--brand);font-weight:700;}
+  .abstract p{margin:0 0 12px;font-size:15.5px;line-height:1.68;color:var(--ink-soft);}
+  .abstract p:last-child{margin-bottom:0;}
+  .abstract .kw{font-size:14px;color:var(--ink-faint);margin-top:14px;}
+  .abstract .lbl{font-weight:700;color:var(--brand-dark);}
+
+  .editorial-note{
+    background:var(--amber-bg);border:1px solid var(--amber-border);border-radius:10px;
+    padding:16px 20px;margin:0 0 32px;font-size:14.5px;color:var(--amber-ink);
+  }
+  .editorial-note strong{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;}
+
+  h2{
+    font-size:23px;font-weight:700;color:var(--ink);
+    margin:44px 0 8px;padding-top:26px;line-height:1.3;letter-spacing:-.2px;
+    border-top:1px solid var(--line-soft);
+  }
+  h2:first-of-type{border-top:none;padding-top:0;margin-top:8px;}
+  h2 .num{color:var(--brand);font-weight:700;margin-right:10px;}
+  h3{font-size:18px;font-weight:650;color:var(--brand-dark);margin:28px 0 6px;line-height:1.4;}
+  p{margin:0 0 18px;color:var(--ink-soft);}
+
+  .callout{
+    background:var(--callout-bg);
+    border-left:4px solid var(--callout-border);
+    border-radius:0 10px 10px 0;
+    padding:20px 24px;
+    margin:26px 0;
+  }
+  .callout .tag{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--brand);font-weight:700;margin-bottom:7px;}
+  .callout p{margin:0;color:var(--ink);font-size:15.5px;}
+
+  .decl{background:#f7fafc;border:1px solid var(--line);border-radius:10px;padding:22px 26px;margin:30px 0;}
+  .decl p{font-size:14.5px;margin:0 0 12px;}
+  .decl p:last-child{margin-bottom:0;}
+  .decl .lbl{font-weight:700;color:var(--brand-dark);}
+
+  .refs{counter-reset:ref;margin-top:6px;}
+  .refs .r{
+    font-size:14px;line-height:1.6;color:var(--ink-faint);
+    padding:9px 0 9px 34px;position:relative;border-top:1px solid var(--line-soft);
+  }
+  .refs .r:first-child{border-top:none;}
+  .refs .r::before{
+    counter-increment:ref;content:counter(ref);
+    position:absolute;left:0;top:9px;
+    background:var(--brand-soft);color:var(--brand);
+    width:24px;height:24px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:12px;font-weight:700;
+  }
+
+  .cta{
+    background:linear-gradient(160deg,#0e5a8a 0%,#0a4368 100%);
+    border-radius:var(--radius);color:#fff;
+    padding:38px 40px;margin:44px 0 0;text-align:center;
+  }
+  .cta h3{color:#fff;font-size:21px;margin:0 0 8px;}
+  .cta p{color:#cfe3f0;font-size:15px;margin:0 0 22px;}
+  .cta .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .cta a{text-decoration:none;font-weight:600;font-size:14.5px;padding:11px 24px;border-radius:30px;transition:all .2s;}
+  .cta a.primary{background:#fff;color:var(--brand-dark);}
+  .cta a.primary:hover{background:#e8f1f7;}
+  .cta a.ghost{border:1px solid rgba(255,255,255,.4);color:#fff;}
+  .cta a.ghost:hover{background:rgba(255,255,255,.12);}
+
+  footer{text-align:center;padding:34px 24px;color:var(--ink-faint);font-size:13px;}
+
+  @media(max-width:680px){
+    body{font-size:16px;}
+    .hero{padding:26px 20px 48px;}
+    .hero h1{font-size:24px;}
+    .card{padding:32px 24px;}
+    h2{font-size:20px;}
+    .wrap{padding:0 14px 60px;}
+    .abstract,.callout,.decl,.editorial-note{padding:18px 18px;}
+    .cta{padding:30px 24px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="hub">SWB Evidence Hub</span>
+  <a href="https://swbbrasil.com.br/#/Home">← Voltar ao menu principal</a>
+</div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="logo-row"><img src="/swblogocontrastado.png" alt="SWB Sacral Protection"></div>
+    <div class="crumbs">
+      <span class="badge">Revisão de Literatura</span>
+      <span class="badge">Artigo Técnico-Científico</span>
+      <span class="badge">Inglês</span>
+      <span class="badge">SWB Evidence Hub</span>
+    </div>
+    <h1>Fecal Contamination in Sacral Pressure Injuries: A Practice-Focused Review</h1>
+    <p class="lede article-summary">Revisão narrativa prática que sintetiza mecanismos, lacunas assistenciais e estratégias comparativas de isolamento fecal em lesões por pressão sacral, com agenda de pesquisa voltada à prevenção proativa da contaminação de curativos.</p>
+    <div class="meta">
+      <span>👤 Araújo EHL; Montenegro RVD</span>
+      <span>📅 2026 (revisão)</span>
+      <span>🔬 SWB Sacral Protection</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+<div class="card">
+
+  <div class="editorial-note">
+    <strong>Nota editorial</strong>
+    Documento técnico para apoio científico e educacional, publicado no site institucional do SWB. Este material não constitui publicação revisada por pares nem aceitação editorial em periódico, e não substitui protocolos institucionais, bulas ou instruções de uso do fabricante.
+  </div>
+
+  <div class="abstract">
+    <h3>Abstract</h3>
+    <p><span class="lbl">Background:</span> Sacrococcygeal pressure injuries occur in a microclimate-prone anatomical area adjacent to fecal efflux. Fecal contamination is frequently managed reactively, yet it functions as a distinct and potentially modifiable driver of dressing failure and care burden.</p>
+    <p><span class="lbl">Aim:</span> We aimed to synthesise mechanisms, practice gaps and comparative isolation approaches to inform practice and research regarding fecal contamination as an under-addressed pathway to dressing disruption.</p>
+    <p><span class="lbl">Methods:</span> This practice-focused narrative review prioritised adult-focused literature on fecal incontinence, sacral/perineal contamination, IAD/MASD, dressing failure related to soiling/microclimate, microbiome/biofilm, and fecal isolation strategies. Searches were conducted in major biomedical sources (PubMed/MEDLINE, Google Scholar), prioritising 2020–2025 publications.</p>
+    <p><span class="lbl">Results:</span> Conventional containment and barrier products reduce skin exposure but do not reliably block natal cleft "tracking" toward the coccyx and dressing borders. Recurrent contamination precipitates premature dressing loss, repeated manipulation and workload amplification.</p>
+    <p><span class="lbl">Conclusions:</span> Fecal contamination should be treated as a distinct, modifiable risk factor in sacral pressure injury care. Proactive isolation strategies and structured escalation pathways may help preserve dressing dwell time and reduce unplanned re-dressing events.</p>
+    <p class="kw"><span class="lbl">Keywords:</span> Biofilm; Fecal incontinence; Incontinence-associated dermatitis; Pressure injury; Sacral region; Wound dressing.</p>
+  </div>
+
+  <div class="callout">
+    <div class="tag">Key Messages</div>
+    <p><strong>A. Overview:</strong> Fecal contamination of sacral dressings is a high-impact, modifiable driver of dressing failure and care inefficiency in pressure injury management.</p>
+    <p><strong>B. Aim:</strong> To synthesise mechanisms, practice gaps and fecal isolation strategies to support proactive prevention of contamination and define a pragmatic research agenda.</p>
+    <p><strong>C. Key findings:</strong> Diapers and barrier products reduce skin exposure but do not mechanically block natal cleft tracking. Invasive fecal management systems may help selected patients but are not universally applicable, supporting evaluation of non-invasive external barrier strategies.</p>
+  </div>
+
+  <h2><span class="num">1</span>Introduction</h2>
+  <p>Sacrococcygeal pressure injuries (PIs) occur at the intersection of pressure, shear, friction and a hostile microclimate. In clinical practice, the sacral region is frequently exposed to occlusion from absorbent products, heat accumulation, perspiration and moisture, with additional challenges in people who are immobile, frail, or dependent for personal care. When fecal incontinence is present, the local environment can be repeatedly contaminated and cleaned, generating an unplanned cycle of "soil–clean–re-dress" that disrupts dressing dwell time and increases workload.</p>
+  <p>A characteristic failure mode is fecal "tracking" along the natal (intergluteal) cleft. Absorbent products are designed primarily for containment and absorption; they do not mechanically isolate the cleft pathway. In a bedridden patient, liquid or semi-formed stool may travel along this channel toward the coccyx and dressing border, contaminating even well-selected dressings shortly after application.</p>
+  <p>This review synthesises: (1) mechanisms by which fecal exposure destabilises the sacral wound environment, (2) why commonly used measures may be insufficient to prevent contamination-driven dressing loss, (3) comparative strategies for fecal isolation, and (4) clinical implications and a research agenda that treats contamination events as measurable operational outcomes.</p>
+
+  <h2><span class="num">2</span>Methods</h2>
+  <p>This is a practice-focused narrative review. Eligibility criteria prioritised adult-focused publications addressing fecal incontinence in immobile or dependent adults, sacral and perineal wound contamination, incontinence-associated dermatitis, moisture-associated skin damage, dressing failure associated with soiling and microclimate, microbial burden, biofilm concepts relevant to chronic wounds, and strategies to isolate fecal effluent from sacral dressings.</p>
+  <p>Searches were conducted in major biomedical sources, including PubMed/MEDLINE and Google Scholar, prioritising publications from 2020 to 2025. Seminal older health-economic sources were included when relevant. Study selection prioritised systematic reviews, randomised trials, consensus documents and guidelines, with contextual inclusion of mechanistic and practice reports when needed to clarify anatomical pathways and failure modes.</p>
+
+  <h2><span class="num">3</span>Results — Mechanisms</h2>
+  <h3>3.1 Microclimate disruption, chemical irritation and the dressing–skin interface</h3>
+  <p>The sacral region is vulnerable to microclimate instability because it is subject to occlusion, local heat, perspiration and friction. Fecal effluent adds moisture and irritant exposure that can compromise the stratum corneum and increase vulnerability to MASD/IAD. Repeated cleansing and friction may further disrupt the skin barrier.</p>
+  <p>This has direct relevance to dressing performance. Compromised periwound skin and persistent moisture can undermine adhesive borders, promote edge lift and shorten intended dressing dwell time. Once the dressing border fails, contamination may reach the wound bed, and repeated dressing removal can mechanically traumatise fragile granulation tissue and wound edges.</p>
+
+  <h3>3.2 Microbial burden and biofilm relevance in repeated contamination</h3>
+  <p>Pressure injuries are frequently polymicrobial, and contemporary discussions emphasise the role of microbial communities and biofilm in chronicity and delayed healing.<sup>2,3</sup> Fecal exposure increases bioburden and introduces a complex gut-derived microbial load. Even without clinically evident infection, repeated contamination events may increase the probability of critical colonisation, odour, exudate changes and inflammatory burden. While this review does not assert that fecal exposure directly "causes" biofilm, it supports the practical inference that reducing contamination frequency is a plausible step to stabilise the wound environment.</p>
+
+  <h3>3.3 The natal cleft "tracking" pathway as a discrete failure mode</h3>
+  <p>A central practice gap is the anatomical pathway that enables stool tracking. The natal cleft forms a channel that can direct loose stool rostrally toward the coccyx. Absorbent products, even when well fitted, do not reliably "obliterate" this space. This failure mode is operationally important because it is measurable: contamination events affecting the dressing and dressing changes attributable to contamination can be captured as endpoints.</p>
+
+  <h3>3.4 Comparative strategies to isolate fecal effluent from the sacral region</h3>
+  <p><strong>Containment and barrier products.</strong> Diapers and absorbent pads, combined with structured cleansing and skin protection routines, remain foundational for hygiene and intact-skin protection but do not reliably prevent tracking to the dressing border.<sup>1</sup></p>
+  <p><strong>Prophylactic sacral dressings.</strong> High-quality evidence supports multilayer silicone-adhesive foam dressings to prevent sacral/coccygeal pressure ulcers in at-risk patients.<sup>5,6</sup> Independent economic evaluations have found this class of dressing to be cost-saving relative to standard prevention alone.<sup>7</sup></p>
+  <p><strong>Invasive fecal management systems (FMS).</strong> FMS can reduce exposure and decrease workload in selected intensive care contexts, but must be applied selectively due to invasiveness, contraindications, patient tolerability and care-setting fit.<sup>8,9</sup></p>
+  <p><strong>Diversion/colostomy.</strong> Surgical diversion provides high-level isolation for selected complex cases but is invasive, resource intensive and not scalable for routine contamination prevention.</p>
+  <p><strong>Non-invasive external anatomical barrier strategies.</strong> External anatomical barriers aim to create a physical interface between the perineal effluent and the sacral dressing border. Although device-specific evidence is limited and should be generated prospectively, the concept is coherent with the mechanism of failure (tracking) and the operational endpoint (contamination-driven dressing replacement).<sup>4</sup></p>
+
+  <h2><span class="num">4</span>Discussion</h2>
+  <p>This review supports reframing fecal contamination as a modifiable driver of sacral dressing failure and service-level inefficiency. The key insight is not that current care is wrong, but that routine containment and barrier strategies were not designed to mechanically isolate the natal cleft pathway. Economic modelling of comparator dressings suggests meaningful institutional savings are plausible when premature replacement is avoided.<sup>7</sup></p>
+  <p>A structured escalation pathway should consider the least invasive effective option first, guided by stool consistency, frequency of soiling, patient tolerance and contraindications. In selected ICU patients, FMS may be appropriate.<sup>8,9</sup> The evidence base should be strengthened using actionable endpoints: (i) number of contamination events affecting the dressing border, (ii) dressing changes attributable to contamination, (iii) dressing dwell time, (iv) periwound skin integrity (IAD/MASD), and (v) workforce impact.</p>
+
+  <div class="callout">
+    <div class="tag">Limitations</div>
+    <p>This review has a narrative scope and qualitative synthesis, and the settings and comparator strategies included are heterogeneous. The review does not claim that fecal exposure directly causes infection or biofilm in all cases. Readers should also note that some cited sources — including the FMS expert-consensus statement<sup>9</sup> and health-economic evaluations of comparator dressings<sup>7</sup> — were organised or co-authored with industry involvement. This is disclosed here for balance, in the same spirit as the authors' own conflict-of-interest disclosure regarding SWB.</p>
+  </div>
+
+  <h2><span class="num">5</span>Conclusion</h2>
+  <p>Fecal contamination of sacral dressings is an under-specified yet high-impact contributor to premature dressing loss and care inefficiency. The natal cleft tracking pathway helps explain why standard containment and barrier approaches may be insufficient in patients with recurrent fecal soiling. A structured escalation pathway and prospective evaluation of non-invasive external anatomical barrier strategies are warranted.</p>
+
+  <h3>Implications for clinical practice</h3>
+  <p>Document fecal contamination as a distinct, measurable cause of dressing failure (not merely "soiling") to quantify its operational impact. Use a structured escalation pathway for recurrent contamination, and recognise that reducing unplanned dressing replacement may meaningfully reduce nursing workload, a major cost driver in PI care.<sup>10</sup></p>
+
+  <h3>Further research</h3>
+  <p>Prospective studies should quantify contamination events affecting dressings, dressing changes attributable to contamination, dressing dwell time, periwound skin integrity, IAD/MASD occurrence and nursing time/workflow impact. Implementation studies should evaluate feasibility, training needs, safety monitoring and economic impact using real-world endpoints.</p>
+
+  <div class="callout">
+    <div class="tag">Product Note</div>
+    <p>In the manuscript body, commercial names are replaced by generic terms when appropriate. The external anatomical barrier referenced corresponds to SWB — Sacral Wound Barrier, a disposable polyurethane foam device notified to ANVISA under No. 80220130014. Manufacturer: Intertech Indústria de Produtos Médico Hospitalares Ltda., Brazil.</p>
+  </div>
+
+  <h2>Declarações</h2>
+  <div class="decl">
+    <p><span class="lbl">Conflito de interesses:</span> Érico Henrique de Lima Araújo é o inventor e detentor de direitos de propriedade intelectual do dispositivo discutido nesta revisão (SWB — Sacral Wound Barrier; notificação ANVISA nº 80220130014) e possui interesse comercial em sua fabricação e comercialização. Rivelino Verdier Dantas Montenegro atuou como colaborador metodológico independente e não possui vínculo comercial, societário ou de propriedade intelectual com o SWB ou com o fabricante. Em razão do vínculo comercial de Érico Henrique de Lima Araújo com o dispositivo, a discussão sobre estratégias de barreira anatômica externa (Seção 3.4) deve ser lida considerando esse interesse — Rivelino Verdier Dantas Montenegro não compartilha desse vínculo.</p>
+    <p><span class="lbl">Financiamento:</span> Nenhum financiamento externo foi recebido para a elaboração deste documento.</p>
+    <p><span class="lbl">Afiliações:</span> Érico Henrique de Lima Araújo, RN, MSc Candidate — Universidade Adventista de São Paulo (UNASP), São Paulo, Brazil. Rivelino Verdier Dantas Montenegro, PhD — BC3 Technologies.</p>
+  </div>
+
+  <h2>Referências</h2>
+  <div class="refs">
+    <div class="r">McNichol L, Ayello EA, Phearman LA, Pezzella PA, Culver EA. Moisture-associated skin damage: expanding practice based on the new consensus. J Wound Ostomy Continence Nurs. 2022;49(3):221–231.</div>
+    <div class="r">de Wert LA, Rensen SS, Soons Z, Poeze M, Bouvy ND, Penders J. The cutaneous microbiome in hospitalized patients with pressure ulcers. Sci Rep. 2020;10:5963.</div>
+    <div class="r">Kabir F, Yung DBY, da Cruz Nizer WS, et al. Pressure injuries and biofilms: microbiome, model systems and therapies. Wound Repair Regen. 2025;33(1):e70005.</div>
+    <div class="r">Lo WB, Herbert K, Rodrigues D, Afshari FT. The 'transverse guard' wound dressing technique to reduce faecal contamination after spinal surgery in neonates and infants. Br J Nurs. 2020;29(12):S12–S15.</div>
+    <div class="r">Oe M, Sasaki S, Shimura T, Takaki Y, Sanada H. Effects of multilayer silicone foam dressings for the prevention of pressure ulcers in high-risk patients: a randomized clinical trial. Adv Wound Care (New Rochelle). 2020;9(12):649–656.</div>
+    <div class="r">Forni C, D'Alessandro F, Gallerani P, et al. Effectiveness of a multi-layer silicone-adhesive polyurethane foam dressing as prevention for sacral pressure ulcers in at-risk in-patients: randomized controlled trial. Int J Nurs Stud. 2022;127:104172.</div>
+    <div class="r">Mezzalira E, Ambrosi E, Askew N, Nherera L, Searle R, Fatoye F, Forni C. Economic evaluation of multilayer silicone-adhesive polyurethane foam dressing for the prevention of pressure ulcers in at-risk hospitalized patients: US and Italian perspective. Int J Health Policy Manag. 2024;13.</div>
+    <div class="r">Gutting T, Pfützner A. The crucial role of fecal management systems in intensive care. Expert Rev Med Devices. 2024;21(8):701–707.</div>
+    <div class="r">Gutting T, Brauer M, Öhlbauer M, Schmid S, Beier JP, Pfützner A. Recommendations for use of fecal management systems in intensive care units: results from an expert consensus meeting. Am J Infect Control. 2026;54(5):582–585.</div>
+    <div class="r">Bennett G, Dealey C, Posnett J. The cost of pressure ulcers in the UK. Age Ageing. 2004;33(3):230–235.</div>
+  </div>
+
+  <div class="cta">
+    <h3>SWB Sacral Protection</h3>
+    <p>A barreira anatômica externa não invasiva para proteção de lesões sacrais.</p>
+    <div class="btns">
+      <a class="primary" href="https://swbbrasil.com.br/#/Marketplace">Conheça o produto</a>
+      <a class="ghost" href="https://swbbrasil.com.br/#/BaseCientifica">Voltar à Base Científica</a>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<footer>
+  SWB Evidence Hub — © 2026 7Safe Brasil — 55.747.955 ERICO HENRIQUE DE LIMA ARAUJO - ME, CNPJ 55.747.955/0001-07. Documento de apoio técnico-institucional, educacional e científico.
+</footer>
+
+</body>
+</html>

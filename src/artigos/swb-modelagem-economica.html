@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modelagem Econômica Preliminar do SWB — SWB Evidence Hub</title>
+<style>
+  :root{
+    --bg:#f4f6f8;
+    --surface:#ffffff;
+    --ink:#1a2b3c;
+    --ink-soft:#42566a;
+    --ink-faint:#6b7d8f;
+    --brand:#0e5a8a;
+    --brand-dark:#0a4368;
+    --brand-soft:#e8f1f7;
+    --accent:#12a19a;
+    --line:#e2e8ee;
+    --line-soft:#eef2f6;
+    --callout-bg:#eef6fb;
+    --callout-border:#0e5a8a;
+    --amber-bg:#fff6e4;
+    --amber-border:#f0d38b;
+    --amber-ink:#8a5a00;
+    --shadow:0 1px 3px rgba(16,40,60,.06),0 8px 28px rgba(16,40,60,.05);
+    --radius:14px;
+    --maxw:820px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:17px;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  .topbar{
+    background:var(--brand-dark);
+    color:#fff;
+    padding:13px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-size:14px;
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .topbar .hub{font-weight:600;letter-spacing:.3px;display:flex;align-items:center;gap:9px;}
+  .topbar .hub::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--accent);display:inline-block;}
+  .topbar a{color:#cfe3f0;text-decoration:none;transition:color .2s;}
+  .topbar a:hover{color:#fff;}
+
+  .hero{
+    background:linear-gradient(160deg,#0e5a8a 0%,#0a4368 100%);
+    color:#fff;
+    padding:34px 24px 60px;
+  }
+  .hero-inner{max-width:var(--maxw);margin:0 auto;}
+  .logo-row{margin-bottom:22px;}
+  .logo-row img{height:40px;width:auto;display:block;}
+  .crumbs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px;}
+  .crumbs span{
+    background:rgba(255,255,255,.13);
+    border:1px solid rgba(255,255,255,.2);
+    padding:5px 13px;border-radius:30px;
+    font-size:12.5px;font-weight:500;letter-spacing:.2px;
+  }
+  .hero h1{font-size:30px;line-height:1.28;margin:0 0 20px;font-weight:700;letter-spacing:-.3px;}
+  .hero .lede{font-size:17px;line-height:1.7;color:#d8e8f3;margin:0 0 30px;font-weight:400;}
+  .hero .meta{
+    display:flex;flex-wrap:wrap;gap:22px;font-size:14px;color:#bcd6e8;
+    padding-top:22px;border-top:1px solid rgba(255,255,255,.18);
+  }
+  .hero .meta span{display:flex;align-items:center;gap:7px;}
+
+  .wrap{max-width:var(--maxw);margin:-34px auto 0;padding:0 24px 80px;}
+  .card{
+    background:var(--surface);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:48px 52px;
+    border:1px solid var(--line);
+  }
+
+  .abstract{
+    background:var(--brand-soft);
+    border-radius:10px;
+    padding:24px 26px;
+    margin:0 0 38px;
+    border:1px solid #d4e6f1;
+  }
+  .abstract h3{margin:0 0 10px;font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--brand);font-weight:700;}
+  .abstract p{margin:0 0 12px;font-size:15.5px;line-height:1.68;color:var(--ink-soft);}
+  .abstract p:last-child{margin-bottom:0;}
+  .abstract .kw{font-size:14px;color:var(--ink-faint);margin-top:14px;}
+  .abstract .lbl{font-weight:700;color:var(--brand-dark);}
+
+  .editorial-note{
+    background:var(--amber-bg);border:1px solid var(--amber-border);border-radius:10px;
+    padding:16px 20px;margin:0 0 32px;font-size:14.5px;color:var(--amber-ink);
+  }
+  .editorial-note strong{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;}
+
+  h2{
+    font-size:23px;font-weight:700;color:var(--ink);
+    margin:44px 0 8px;padding-top:26px;line-height:1.3;letter-spacing:-.2px;
+    border-top:1px solid var(--line-soft);
+  }
+  h2:first-of-type{border-top:none;padding-top:0;margin-top:8px;}
+  h2 .num{color:var(--brand);font-weight:700;margin-right:10px;}
+  h3{font-size:18px;font-weight:650;color:var(--brand-dark);margin:28px 0 6px;line-height:1.4;}
+  p{margin:0 0 18px;color:var(--ink-soft);}
+
+  .callout{
+    background:var(--callout-bg);
+    border-left:4px solid var(--callout-border);
+    border-radius:0 10px 10px 0;
+    padding:20px 24px;
+    margin:26px 0;
+  }
+  .callout .tag{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--brand);font-weight:700;margin-bottom:7px;}
+  .callout p{margin:0;color:var(--ink);font-size:15.5px;}
+  .callout p + p{margin-top:10px;}
+  .callout.formula{font-family:Georgia,serif;}
+
+  .tbl-title{font-size:14px;font-weight:700;color:var(--ink);margin:34px 0 0;text-align:center;}
+  .tbl-wrap{overflow-x:auto;margin:10px 0 6px;}
+  table{width:100%;border-collapse:collapse;font-size:14.5px;border:1px solid var(--line);border-radius:8px;overflow:hidden;}
+  thead th{background:var(--brand);color:#fff;font-weight:600;padding:11px 14px;text-align:left;font-size:13.5px;letter-spacing:.2px;}
+  thead th.c{text-align:center;}
+  tbody td{padding:10px 14px;border-top:1px solid var(--line);color:var(--ink-soft);}
+  tbody td.c{text-align:center;}
+  tbody tr:nth-child(even){background:#f7fafc;}
+  tbody tr.total td{background:var(--brand-soft);font-weight:700;color:var(--ink);}
+  .tbl-source{font-size:12.5px;color:var(--ink-faint);font-style:italic;margin:0 0 26px;}
+
+  .decl{background:#f7fafc;border:1px solid var(--line);border-radius:10px;padding:22px 26px;margin:30px 0;}
+  .decl p{font-size:14.5px;margin:0 0 12px;}
+  .decl p:last-child{margin-bottom:0;}
+  .decl .lbl{font-weight:700;color:var(--brand-dark);}
+
+  .refs{counter-reset:ref;margin-top:6px;}
+  .refs .r{
+    font-size:14px;line-height:1.6;color:var(--ink-faint);
+    padding:9px 0 9px 34px;position:relative;border-top:1px solid var(--line-soft);
+  }
+  .refs .r:first-child{border-top:none;}
+  .refs .r::before{
+    counter-increment:ref;content:counter(ref);
+    position:absolute;left:0;top:9px;
+    background:var(--brand-soft);color:var(--brand);
+    width:24px;height:24px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:12px;font-weight:700;
+  }
+
+  .cta{
+    background:linear-gradient(160deg,#0e5a8a 0%,#0a4368 100%);
+    border-radius:var(--radius);color:#fff;
+    padding:38px 40px;margin:44px 0 0;text-align:center;
+  }
+  .cta h3{color:#fff;font-size:21px;margin:0 0 8px;}
+  .cta p{color:#cfe3f0;font-size:15px;margin:0 0 22px;}
+  .cta .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .cta a{text-decoration:none;font-weight:600;font-size:14.5px;padding:11px 24px;border-radius:30px;transition:all .2s;}
+  .cta a.primary{background:#fff;color:var(--brand-dark);}
+  .cta a.primary:hover{background:#e8f1f7;}
+  .cta a.ghost{border:1px solid rgba(255,255,255,.4);color:#fff;}
+  .cta a.ghost:hover{background:rgba(255,255,255,.12);}
+
+  footer{text-align:center;padding:34px 24px;color:var(--ink-faint);font-size:13px;}
+
+  @media(max-width:680px){
+    body{font-size:16px;}
+    .hero{padding:26px 20px 48px;}
+    .hero h1{font-size:24px;}
+    .card{padding:32px 24px;}
+    h2{font-size:20px;}
+    .wrap{padding:0 14px 60px;}
+    .abstract,.callout,.decl,.editorial-note{padding:18px 18px;}
+    .cta{padding:30px 24px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="hub">SWB Evidence Hub</span>
+  <a href="https://swbbrasil.com.br/#/Home">← Voltar ao menu principal</a>
+</div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="logo-row"><img src="/swblogocontrastado.png" alt="SWB Sacral Protection"></div>
+    <div class="crumbs">
+      <span class="badge">Modelagem Econômica</span>
+      <span class="badge">Análise Preliminar</span>
+      <span class="badge">Inglês</span>
+      <span class="badge">SWB Evidence Hub</span>
+    </div>
+    <h1>Preliminary Cost-Consequence and Budget Impact Modeling of an External Anatomical Sacral Barrier for Contamination-Driven Dressing Failure in Sacral Pressure Injuries</h1>
+    <p class="lede article-summary">Modelo econômico preliminar de custo-consequência e impacto orçamentário para avaliar a plausibilidade econômica de um dispositivo de barreira anatômica externa (SWB) como complemento ao cuidado padrão de pacientes com lesão por pressão sacral e incontinência fecal — incluindo análise de cenários conforme o padrão CHEERS 2022.</p>
+    <div class="meta">
+      <span>👤 Araújo EHL; Montenegro RVD</span>
+      <span>📅 2026 (modelagem preliminar)</span>
+      <span>🔬 SWB Sacral Protection</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+<div class="card">
+
+  <div class="editorial-note">
+    <strong>Nota editorial</strong>
+    Documento técnico para apoio científico e educacional, publicado no site institucional do SWB. Este material não constitui publicação revisada por pares. Os parâmetros econômicos são preliminares e devem ser adaptados aos custos institucionais locais antes de qualquer decisão de política, compra ou protocolo. A efetividade clínica do dispositivo não é apresentada como estabelecida. Este modelo econômico foi elaborado pelos próprios desenvolvedores do dispositivo e não foi auditado de forma independente; instituições devem tratar todos os parâmetros de custo como ilustrativos até validação local (ver Limitations). Financiamento: nenhum financiamento externo foi recebido para a elaboração deste documento.
+  </div>
+
+  <div class="abstract">
+    <h3>Abstract</h3>
+    <p><span class="lbl">Background:</span> Sacral pressure injuries in patients with fecal incontinence are frequently complicated by contamination of the dressing interface. Liquid or semi-formed stool may track cranially along the intergluteal cleft toward the coccyx and dressing border. Absorbent products are essential components of care, but they do not necessarily interrupt this anatomical pathway mechanically.</p>
+    <p><span class="lbl">Objective:</span> To estimate the economic plausibility of adding an external anatomical sacral barrier to standard care for adults with sacral pressure injuries and fecal incontinence, using a preliminary cost-consequence and budget impact framework.</p>
+    <p><span class="lbl">Methods:</span> A decision-tree model was structured from the hospital institutional perspective. The simulated population included adult patients with stage III–IV sacral pressure injuries, fecal incontinence, and recurrent contamination-driven dressing loss. Two strategies were compared over a 30-day horizon: standard care alone and standard care plus an external anatomical sacral barrier. The unit price considered for SWB in the initial commercial phase was R$5.00.</p>
+    <p><span class="lbl">Results:</span> The principal economic driver was the number of contamination-attributable dressing changes avoided per patient-month. With a device cost of R$5.00 and estimated use of 2–4 units/day, monthly device cost ranges from approximately R$300 to R$600 per patient. If a dressing episode costs R$350, the device would need to avoid approximately 0.9–1.7 dressing changes per month to reach cost neutrality.</p>
+    <p><span class="lbl">Conclusion:</span> Device-specific clinical effectiveness is not assumed as established. Real-world effectiveness will be measured during post-market use through structured institutional follow-up.</p>
+    <p class="kw"><span class="lbl">Keywords:</span> Sacral pressure injury; fecal incontinence; dressing failure; contamination; anatomical barrier; budget impact; cost-consequence analysis; nursing workload.</p>
+  </div>
+
+  <h2><span class="num">1</span>Introduction</h2>
+  <p>The sacral region combines pressure, shear, friction, local heat, moisture and occlusion. In bedridden patients with fecal incontinence, the wound environment can be repeatedly destabilized by exposure to fecal effluent. When contamination reaches the dressing border or the periwound region, it may compromise adhesion, reduce dressing dwell time, increase maceration and force unplanned replacement.<sup>3</sup></p>
+  <p>A clinically relevant mechanism is fecal tracking along the natal or intergluteal cleft. Absorbent products reduce exposure volume and remain foundational for hygiene, but they do not necessarily obliterate the anatomical space through which loose or semi-formed stool can migrate toward the coccyx and sacral dressing edge.</p>
+  <p>This mechanism creates a recurring operational cycle: contamination, cleansing, reassessment, re-dressing and renewed risk of contamination. For hospitals and long-term care institutions, this cycle consumes advanced dressings, personal protective equipment, cleansing supplies and nursing time.<sup>3</sup></p>
+
+  <h3>Clinical and technical rationale</h3>
+  <p>The SWB is described as a disposable, non-invasive external barrier designed to fit the intergluteal cleft and mechanically help isolate the natal cleft tracking pathway, reducing fecal effluent contact with the sacral dressing border. Its technical description identifies it as a Class I medical device, notified to ANVISA under number 80220130014, made primarily of medical hydrophobic polyurethane foam <em>(per manufacturer technical file and ANVISA notification; not a peer-reviewed literature source)</em>.</p>
+
+  <h2><span class="num">2</span>Objective</h2>
+  <p>The objective was to estimate whether adding an external anatomical sacral barrier to standard care is economically plausible in adult patients with sacral pressure injuries and fecal incontinence. The model identifies the conditions under which the device may become cost-neutral or cost-saving by reducing contamination-attributable dressing replacement.</p>
+
+  <h2><span class="num">3</span>Methods</h2>
+  <h3>3.1 Study design</h3>
+  <p>A preliminary decision-analytic model was developed using a cost-consequence and budget impact structure. The model was guided by health-economic reporting principles and decision-model transparency standards.<sup>1,2</sup></p>
+  <h3>3.2 Perspective and horizon</h3>
+  <p>The analysis used the hospital institutional perspective. The base-case horizon was 30 days, which is operationally appropriate for measuring dressing consumption, device use, nursing workload and contamination-attributable re-dressing events.</p>
+  <h3>3.3 Population</h3>
+  <p>The modeled population included adult patients with stage III–IV sacral pressure injuries or complex sacral wounds, fecal incontinence or frequent loose/semi-formed stool, recurrent dressing contamination and use of diapers or absorbent products as part of routine care.</p>
+  <h3>3.4 Standard care and standard care + SWB</h3>
+  <p>Standard care comprised advanced dressing according to institutional protocol, cleansing, topical barriers when indicated, diapers or absorbent products, repositioning, pressure redistribution and nursing assessment.<sup>3,5,6</sup> The SWB arm added an external anatomical barrier positioned in the intergluteal cleft, modeled as complementary and not a replacement for existing protocols.</p>
+  <h3>3.5 Model structure</h3>
+  <p>The model estimates total monthly cost per patient from dressing episodes, device use and optional scenario-based complication costs. The principal economic mechanism is avoided premature dressing replacement.</p>
+  <div class="callout formula">
+    <div class="tag">Estrutura do Modelo</div>
+    <p>1. Total monthly cost = dressing episode costs + monthly device cost + scenario-specific complication costs</p>
+    <p>2. Dressing episode costs = number of dressing changes × cost per dressing episode</p>
+    <p>3. Monthly device cost = device unit price × devices used per day × 30 days</p>
+    <p>4. Incremental cost = total cost with SWB − total cost with standard care</p>
+  </div>
+  <p>A negative incremental cost indicates potential savings. A positive incremental cost indicates added cost. Cost neutrality occurs when the value of avoided dressing episodes equals the monthly cost of the device.</p>
+  <h3>3.6 Break-even logic</h3>
+  <p>Required avoided dressing changes = monthly device cost ÷ cost per dressing episode. With SWB priced at R$5.00 per unit and estimated use of 2–4 units/day, monthly device cost ranges from approximately R$300 to R$600 per patient. If each dressing episode costs R$350, the device must avoid approximately 0.9–1.7 dressing changes per month to reach cost neutrality.</p>
+
+  <h2><span class="num">4</span>Model Parameters</h2>
+  <p>The parameters below provide the structure for the economic model. Institutional implementation should replace these values with local purchasing data, nursing time-motion estimates and dressing-audit results.</p>
+
+  <p class="tbl-title">Tabela 1 – Parâmetros do modelo econômico</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Parameter</th><th>Value or range</th><th>Role in the model</th></tr></thead>
+      <tbody>
+        <tr><td>Monthly dressing changes, standard care</td><td>10–60 per patient-month</td><td>Defines baseline burden of dressing loss.</td></tr>
+        <tr><td>Reduction in contamination-attributable dressing loss</td><td>0–70%</td><td>Sensitivity variable; not observed clinical efficacy.</td></tr>
+        <tr><td>Dressing cost</td><td>R$150–350/change</td><td>Direct material cost component.</td></tr>
+        <tr><td>Labor, PPE and consumables</td><td>R$200–500/change</td><td>Operational cost per dressing episode.</td></tr>
+        <tr><td>SWB unit price</td><td>R$5.00</td><td>Device acquisition cost in the initial commercial phase.</td></tr>
+        <tr><td>SWB use</td><td>2–4 units/day</td><td>Defines monthly device cost: approximately R$300–600/patient-month.</td></tr>
+        <tr><td>Additional hospitalization</td><td>Scenario only</td><td>Not assumed to be avoided in the base case.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="tbl-source">Fonte: parâmetros elaborados pelos autores a partir de literatura publicada e estimativas técnicas, 2026.</p>
+
+  <h2><span class="num">5</span>Sensitivity Analysis</h2>
+  <p>The model was assessed using scenario analysis across four scenarios: conservative, base-case, favorable, and worst-case. The key variables with the most significant impact are baseline contamination frequency, cost per dressing episode, device use per day, device price, and real reduction in contamination-attributable dressing changes.</p>
+
+  <p class="tbl-title">Tabela 2 – Análise de cenários (CHEERS 2022) — custo mensal por paciente</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Cenário</th><th class="c">Trocas/mês (padrão)</th><th class="c">Redução com SWB</th><th class="c">Custo/troca</th><th class="c">Uso SWB/dia</th><th class="c">Custo sem SWB</th><th class="c">Custo com SWB</th><th class="c">Diferença</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Conservador</td><td class="c">20</td><td class="c">30%</td><td class="c">R$ 350</td><td class="c">4</td><td class="c">R$ 7.000</td><td class="c">R$ 5.500</td><td class="c">−R$ 1.500/mês</td></tr>
+        <tr><td>Caso-base</td><td class="c">30</td><td class="c">50%</td><td class="c">R$ 600</td><td class="c">3</td><td class="c">R$ 18.000</td><td class="c">R$ 9.450</td><td class="c">−R$ 8.550/mês</td></tr>
+        <tr><td>Favorável</td><td class="c">45</td><td class="c">70%</td><td class="c">R$ 850</td><td class="c">2</td><td class="c">R$ 38.250</td><td class="c">R$ 11.775</td><td class="c">−R$ 26.475/mês</td></tr>
+        <tr><td>Pior caso</td><td class="c">15</td><td class="c">0%</td><td class="c">R$ 350</td><td class="c">4</td><td class="c">R$ 5.250</td><td class="c">R$ 5.850</td><td class="c">+R$ 600/mês</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="tbl-source">Fonte: cálculo dos autores a partir dos parâmetros e fórmulas descritos nas Seções 3 e 4, 2026.</p>
+
+  <div class="callout">
+    <div class="tag">Ponto Central</div>
+    <p>Os cenários usam pontos específicos dentro das faixas de parâmetro já definidas neste documento. Custos de internação prolongada foram excluídos de todos os cenários, mantendo a mesma cautela do caso-base. O cenário de pior caso demonstra que, sem redução real de contaminação, o dispositivo representa custo adicional, não economia — evidenciando o ponto de equilíbrio já descrito na lógica de break-even deste modelo.</p>
+  </div>
+
+  <h2><span class="num">6</span>Results</h2>
+  <p>The model indicates that the potential economic value of SWB depends primarily on whether it reduces contamination-attributable dressing replacement in patients with recurrent fecal tracking toward the sacral dressing border. The lower the device price and the higher the cost per dressing episode, the fewer avoided dressing changes are required for cost neutrality.</p>
+  <h3>Operational endpoint and budget impact</h3>
+  <p>The most important endpoint is contamination-attributable dressing changes per patient-month. Institutional budget impact can be estimated by multiplying incremental monthly cost or savings per patient by the number of eligible patients.</p>
+  <div class="callout formula">
+    <div class="tag">Fórmula</div>
+    <p>Monthly institutional budget impact = incremental monthly cost per patient × number of eligible patients</p>
+  </div>
+  <p>For a cohort of 30 high-risk patients, even a small reduction in unplanned dressing episodes can produce meaningful aggregate savings if dressing episode costs are high and contamination events are frequent.</p>
+  <h3>Interpretation</h3>
+  <p>The model should not be interpreted as proof of clinical effectiveness. It provides a structured economic rationale for identifying which real-world endpoints should be collected and which assumptions most influence cost neutrality. The correct economic question is not only "How much does the device cost?" but "How many contaminated dressing changes must be avoided for the device to pay for itself?"</p>
+
+  <h2><span class="num">7</span>Discussion</h2>
+  <p>This model reframes fecal contamination of sacral dressings as an operationally measurable failure mode. When fecal effluent reaches the dressing border and forces premature replacement, the institution incurs direct costs with dressings, PPE, cleansing supplies, disposal and nursing time.</p>
+  <p>The economic rationale for an external anatomical barrier is based on interrupting a specific pathway: fecal tracking through the intergluteal cleft. This strategy does not replace advanced dressings, pressure redistribution, repositioning, skin care or fecal incontinence management.<sup>5,6</sup> The model also highlights a documentation gap: many institutions record dressing replacement without specifying whether it was planned, clinically indicated, or triggered by fecal contamination.</p>
+  <p>In patients with recurrent contamination, an external anatomical sacral barrier priced at R$5.00 per unit may be economically plausible, particularly when advanced dressings and nursing time are costly. Real-world post-market measurement is required to determine actual effectiveness, safety, usability and institutional impact.</p>
+
+  <h3>Clinical practice implications</h3>
+  <p>Institutions evaluating SWB should document fecal contamination as a specific reason for dressing failure, measure actual dressing dwell time in incontinent patients, distinguish planned from unplanned dressing changes and quantify nursing time associated with re-dressing events.</p>
+  <h3>Research priorities</h3>
+  <p>During commercialization, post-market follow-up should measure real-world effectiveness in institutional settings, including contamination frequency, dressing dwell time, avoided dressing changes, daily device consumption, usability, displacement, skin integrity and nursing-team perception.<sup>1,2,3</sup></p>
+
+  <h3>Limitations</h3>
+  <p>This analysis is a preliminary economic model. The clinical effectiveness of the external anatomical barrier will be measured through post-market follow-up during commercialization. Until these data are available, reductions in contamination-attributable dressing loss remain modeled assumptions, not observed clinical efficacy. Dressing costs, PPE costs, labor costs, device consumption and hospitalization costs vary across institutions.</p>
+  <p>The 30-day horizon is appropriate for operational cost modeling but is not sufficient to infer wound healing, infection prevention, hospital length-of-stay reduction or quality-of-life improvement. There is intellectual and/or commercial interest related to the device concept (see Declarações below). Transparency, structured data collection and independent review are important safeguards when interpreting model outputs.</p>
+
+  <h2><span class="num">8</span>Conclusion</h2>
+  <p>Fecal contamination of sacral pressure injury dressings is a clinically plausible and operationally measurable driver of premature dressing replacement. In patients with recurrent contamination, an external anatomical sacral barrier priced at R$5.00 per unit may be economically plausible, particularly when advanced dressings and nursing time are costly. The central endpoint is simple: contamination-attributable dressing changes per patient-month. Real-world post-market measurement is required to determine actual effectiveness, safety, usability and institutional impact.</p>
+
+  <h2>Declarações</h2>
+  <div class="decl">
+    <p><span class="lbl">Conflito de interesses:</span> Érico Henrique de Lima Araújo é o inventor e detentor de direitos de propriedade intelectual do SWB (notificação ANVISA nº 80220130014) e possui interesse comercial em sua fabricação e comercialização. Rivelino Verdier Dantas Montenegro atuou como colaborador metodológico independente e não possui vínculo comercial, societário ou de propriedade intelectual com o SWB ou com o fabricante.</p>
+    <p><span class="lbl">Financiamento:</span> Nenhum financiamento externo foi recebido para a elaboração deste documento.</p>
+    <p><span class="lbl">Afiliações:</span> Érico Henrique de Lima Araújo, RN, MSc Candidate — Universidade Adventista de São Paulo (UNASP), São Paulo, Brazil. Rivelino Verdier Dantas Montenegro, PhD — BC3 Technologies. Autor correspondente: Érico Henrique de Lima Araújo — e-mail: ericobrazil@outlook.com.</p>
+  </div>
+
+  <h2>Referências</h2>
+  <div class="refs">
+    <div class="r">Husereau D, Drummond M, Augustovski F, et al. Consolidated Health Economic Evaluation Reporting Standards 2022 (CHEERS 2022) Statement: Updated reporting guidance for health economic evaluations. Value Health. 2022;25(1):3–9.</div>
+    <div class="r">Eddy DM, Hollingworth W, Caro JJ, Tsevat J, McDonald KM, Wong JB. Model transparency and validation: a report of the ISPOR-SMDM Modeling Good Research Practices Task Force-7. Value Health. 2012;15(6):843–850.</div>
+    <div class="r">Gray M, Black JM, Baharestani MM, Bliss DZ, Colwell JC, Goldberg M, Kennedy-Evans KL, Logan S, Ratliff CR. Moisture-associated skin damage: overview and pathophysiology. J Wound Ostomy Continence Nurs. 2011;38(3):233–241.</div>
+    <div class="r">de Wert LA, Rensen SS, Soons Z, Poeze M, Bouvy ND, Penders J. The cutaneous microbiome in hospitalized patients with pressure ulcers. Sci Rep. 2020;10:5963.</div>
+    <div class="r">Oe M, Sasaki S, Shimura T, Takaki Y, Sanada H. Effects of multilayer silicone foam dressings for the prevention of pressure ulcers in high-risk patients: a randomized clinical trial. Adv Wound Care (New Rochelle). 2020;9(12):649–656.</div>
+    <div class="r">Forni C, D'Alessandro F, Gallerani P, et al. Effectiveness of a multi-layer silicone-adhesive polyurethane foam dressing as prevention for sacral pressure ulcers in at-risk in-patients: randomized controlled trial. Int J Nurs Stud. 2022;127:104172.</div>
+    <div class="r">Gutting T, Pfützner A. The crucial role of fecal management systems in intensive care. Expert Rev Med Devices. 2024;21(8):701–707.</div>
+    <div class="r">Bennett G, Dealey C, Posnett J. The cost of pressure ulcers in the UK. Age Ageing. 2004;33(3):230–235.</div>
+  </div>
+
+  <div class="cta">
+    <h3>SWB Sacral Protection</h3>
+    <p>A barreira anatômica externa não invasiva para proteção de lesões sacrais.</p>
+    <div class="btns">
+      <a class="primary" href="https://swbbrasil.com.br/#/Marketplace">Conheça o produto</a>
+      <a class="ghost" href="https://swbbrasil.com.br/#/BaseCientifica">Voltar à Base Científica</a>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<footer>
+  SWB Evidence Hub — © 2026 7Safe Brasil — 55.747.955 ERICO HENRIQUE DE LIMA ARAUJO - ME, CNPJ 55.747.955/0001-07. O SWB é um dispositivo médico de uso único, Classe I, produto não estéril, notificado na ANVISA sob nº 80220130014. Documento técnico-institucional, educacional e científico.
+</footer>
+
+</body>
+</html>
