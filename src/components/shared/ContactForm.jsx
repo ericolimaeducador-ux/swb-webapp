@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Send } from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import { contactSchema } from '@/lib/contactSchema';
 
 export default function ContactForm({ showQuantity = false }) {
   const [form, setForm] = useState({
@@ -12,28 +13,50 @@ export default function ContactForm({ showQuantity = false }) {
     quantity: '',
     message: '',
   });
+  const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+    // Limpa o erro do campo assim que o usuário começa a corrigi-lo.
+    setErrors((prev) => (prev[name] ? { ...prev, [name]: undefined } : prev));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const result = contactSchema.safeParse(form);
+    if (!result.success) {
+      const fieldErrors = result.error.flatten().fieldErrors;
+      const firstErrors = Object.fromEntries(
+        Object.entries(fieldErrors).map(([key, msgs]) => [key, msgs?.[0]])
+      );
+      setErrors(firstErrors);
+      const firstField = Object.keys(firstErrors)[0];
+      if (firstField) {
+        document.querySelector(`[name="${firstField}"]`)?.focus();
+      }
+      return;
+    }
+
+    setErrors({});
     setLoading(true);
+
+    const data = result.data;
 
     try {
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
-          from_name: form.name,
-          from_email: form.email,
-          phone: form.phone,
-          institution: form.institution,
-          quantity: form.quantity,
-          message: form.message,
+          from_name: data.name,
+          from_email: data.email,
+          phone: data.phone,
+          institution: data.institution,
+          quantity: data.quantity,
+          message: data.message,
         },
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
@@ -46,6 +69,14 @@ export default function ContactForm({ showQuantity = false }) {
     }
   };
 
+  const inputClass = (field) =>
+    `w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0066B3] ${
+      errors[field] ? 'border-red-400' : 'border-gray-300'
+    }`;
+
+  const FieldError = ({ field }) =>
+    errors[field] ? <p className="mt-1 text-sm text-red-600">{errors[field]}</p> : null;
+
   if (submitted) {
     return (
       <div className="text-center py-10">
@@ -56,7 +87,7 @@ export default function ContactForm({ showQuantity = false }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form onSubmit={handleSubmit} noValidate className="space-y-5">
       <div className="grid sm:grid-cols-2 gap-5">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">Nome *</label>
@@ -65,9 +96,11 @@ export default function ContactForm({ showQuantity = false }) {
             required
             value={form.name}
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0066B3]"
+            aria-invalid={errors.name ? 'true' : undefined}
+            className={inputClass('name')}
             placeholder="Seu nome"
           />
+          <FieldError field="name" />
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">E-mail *</label>
@@ -77,9 +110,11 @@ export default function ContactForm({ showQuantity = false }) {
             required
             value={form.email}
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0066B3]"
+            aria-invalid={errors.email ? 'true' : undefined}
+            className={inputClass('email')}
             placeholder="seu@email.com"
           />
+          <FieldError field="email" />
         </div>
       </div>
 
@@ -90,9 +125,11 @@ export default function ContactForm({ showQuantity = false }) {
             name="phone"
             value={form.phone}
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0066B3]"
+            aria-invalid={errors.phone ? 'true' : undefined}
+            className={inputClass('phone')}
             placeholder="+55 (11) 00000-0000"
           />
+          <FieldError field="phone" />
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">Instituição</label>
@@ -100,9 +137,11 @@ export default function ContactForm({ showQuantity = false }) {
             name="institution"
             value={form.institution}
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0066B3]"
+            aria-invalid={errors.institution ? 'true' : undefined}
+            className={inputClass('institution')}
             placeholder="Hospital / Clínica"
           />
+          <FieldError field="institution" />
         </div>
       </div>
 
@@ -113,9 +152,11 @@ export default function ContactForm({ showQuantity = false }) {
             name="quantity"
             value={form.quantity}
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0066B3]"
+            aria-invalid={errors.quantity ? 'true' : undefined}
+            className={inputClass('quantity')}
             placeholder="Ex: 50"
           />
+          <FieldError field="quantity" />
         </div>
       )}
 
@@ -126,9 +167,11 @@ export default function ContactForm({ showQuantity = false }) {
           rows={4}
           value={form.message}
           onChange={handleChange}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0066B3] resize-none"
+          aria-invalid={errors.message ? 'true' : undefined}
+          className={`${inputClass('message')} resize-none`}
           placeholder="Como podemos ajudar sua instituição?"
         />
+        <FieldError field="message" />
       </div>
 
       <Button type="submit" disabled={loading} className="w-full bg-[#0066B3] hover:bg-[#004080] text-white">
