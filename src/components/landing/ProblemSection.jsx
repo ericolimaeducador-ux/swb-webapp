@@ -101,12 +101,12 @@ export default function ProblemSection() {
             <div className="flex items-center gap-4 bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
               <div className="text-center px-6">
                 <p className="text-4xl font-bold text-[#00A878]">40%</p>
-                <p className="text-gray-700 text-sm mt-1">dos pacientes<br/>são incontinentes</p>
+                <p className="text-gray-200 text-sm mt-1">dos pacientes<br/>são incontinentes</p>
               </div>
               <div className="w-px h-16 bg-white/20" />
               <div className="text-center px-6">
                 <p className="text-4xl font-bold text-[#00A878]">3x</p>
-                <p className="text-gray-700 text-sm mt-1">mais trocas<br/>de curativos</p>
+                <p className="text-gray-200 text-sm mt-1">mais trocas<br/>de curativos</p>
               </div>
             </div>
           </div>
