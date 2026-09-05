@@ -1,6 +1,4 @@
 import { Toaster } from "@/components/ui/toaster"
-import { QueryClientProvider } from '@tanstack/react-query'
-import { queryClientInstance } from '@/lib/query-client'
 import ScrollToTop from '@/lib/ScrollToTop'
 import { pagesConfig } from './pages.config'
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
@@ -44,13 +42,11 @@ function App() {
 
   return (
     <HelmetProvider>
-      <QueryClientProvider client={queryClientInstance}>
-        <Router>
-          <ScrollToTop />
-          <AuthenticatedApp />
-        </Router>
-        <Toaster />
-      </QueryClientProvider>
+      <Router>
+        <ScrollToTop />
+        <AuthenticatedApp />
+      </Router>
+      <Toaster />
     </HelmetProvider>
   )
 }
